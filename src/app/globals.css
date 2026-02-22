@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 51, 65, 85; 
+  --background-start-rgb: 253, 253, 253;
+  --background-end-rgb: 240, 249, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  min-height: 100vh;
+  font-feature-settings: "palt";
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
