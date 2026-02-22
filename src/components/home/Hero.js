@@ -15,6 +15,16 @@ export default function Hero() {
                 />
             </div>
 
+            {/* Decorative Logo - Enlarged and moved to absolute top-right corner */}
+            <div className="absolute top-16 right-2 sm:top-24 sm:right-8 opacity-40 animate-pulse-slow pointer-events-none z-10">
+                <img
+                    src="/はるふーtravel.png"
+                    alt=""
+                    className="h-20 sm:h-64 w-auto object-contain"
+                    aria-hidden="true"
+                />
+            </div>
+
             <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:px-8 lg:py-40">
                 <div className="mx-auto max-w-3xl text-center">
 

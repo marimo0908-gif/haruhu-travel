@@ -29,10 +29,8 @@ export default function Header() {
                 {/* Logo - centered on mobile, left on desktop */}
                 <div className="flex items-center lg:absolute lg:left-8">
                     <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2 group">
-                        {/* Logo Image - User requested change */}
-                        <div className="relative h-20 w-40">
-                            <img src="/はるふーtravel.png" alt="はるふートラベル" className="absolute -top-10 -left-10 h-[240px] w-auto max-w-none object-contain" />
-                        </div>
+                        {/* Logo Image */}
+                        <img src="/はるふーtravel.png" alt="はるふートラベル" className="h-10 sm:h-12 w-auto object-contain" />
                     </Link>
                 </div>
 
@@ -57,7 +55,7 @@ export default function Header() {
                 <div className="lg:hidden fixed inset-0 z-50 bg-white/95 backdrop-blur-sm p-4">
                     <div className="flex items-center justify-between mb-8">
                         <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-                            <img src="/はるふーtravel.png" alt="はるふートラベル" className="h-[320px] w-auto object-contain" />
+                            <img src="/はるふーtravel.png" alt="はるふートラベル" className="h-10 w-auto object-contain" />
                         </Link>
                         <button
                             type="button"
