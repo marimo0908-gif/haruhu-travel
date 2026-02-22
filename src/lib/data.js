@@ -194,7 +194,7 @@ export const blogPosts = [
         excerpt: "日々仕事をして、「お金を貯めることこそが人生の正解」そう信じていた私。そんな私の価値観を変えたのは、沖縄旅行と愛犬との別れでした。",
         date: "2026-01-27",
         category: "マイル・ポイ活",
-        imageUrl: "/ブログ2026.1.27.png",
+        imageUrl: "/blog-2026-01-27.png",
         slug: "reason-for-getting-serious",
         content: [
             {
