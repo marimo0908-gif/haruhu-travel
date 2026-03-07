@@ -1,7 +1,15 @@
 import PostCard from "@/components/blog/PostCard";
-import { blogPosts } from "@/lib/data";
+import { client } from "@/sanity/client";
+import { POSTS_QUERY } from "@/sanity/lib/queries";
 
-export default function BlogPage() {
+export default async function BlogPage() {
+    let posts = [];
+    try {
+        posts = await client.fetch(POSTS_QUERY);
+    } catch (error) {
+        console.error("Sanity fetch error:", error);
+    }
+
     return (
         <div className="bg-slate-50 py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -15,8 +23,8 @@ export default function BlogPage() {
                     </p>
                 </div>
                 <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                    {blogPosts.map((post) => (
-                        <PostCard key={post.id} post={post} />
+                    {posts.map((post) => (
+                        <PostCard key={post._id} post={post} />
                     ))}
                 </div>
             </div>

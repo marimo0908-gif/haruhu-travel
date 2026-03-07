@@ -1,8 +1,9 @@
 import Hero from "@/components/home/Hero";
 import PostCard from "@/components/blog/PostCard";
-import { blogPosts } from "@/lib/data";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { client } from "@/sanity/client";
+import { POSTS_QUERY } from "@/sanity/lib/queries";
 
 
 export const metadata = {
@@ -10,9 +11,15 @@ export const metadata = {
   description: "マイルとポイ活で家族旅行へ。忙しいママでもできるお得術を公開中。「お金がない」「時間がない」を解決して、子供との思い出を作りましょう。",
 };
 
-export default function Home() {
-  // Get the 3 most recent posts
-  const recentPosts = blogPosts.slice(0, 3);
+export default async function Home() {
+  let posts = [];
+  try {
+    posts = await client.fetch(POSTS_QUERY);
+  } catch (error) {
+    console.error("Sanity fetch error:", error);
+  }
+
+  const displayPosts = posts.slice(0, 3);
 
   return (
     <div className="flex flex-col gap-10 pb-20">
@@ -36,8 +43,8 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3">
-            {recentPosts.map((post) => (
-              <PostCard key={post.id} post={post} />
+            {displayPosts.map((post) => (
+              <PostCard key={post._id} post={post} />
             ))}
           </div>
         </div>
