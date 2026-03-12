@@ -4,6 +4,7 @@ import { Clock, ArrowLeft } from "lucide-react";
 import { client, urlFor } from "@/sanity/client";
 import { POST_QUERY, POST_SLUGS_QUERY } from "@/sanity/lib/queries";
 import { SanityContent } from "@/sanity/components/SanityContent";
+import EnglishQuizBanner from "@/components/blog/EnglishQuizBanner";
 
 export async function generateStaticParams() {
     try {
@@ -102,6 +103,8 @@ export default async function BlogPostPage({ params }) {
                 <div className="prose prose-slate prose-lg max-w-none">
                     <SanityContent value={post.body} />
                 </div>
+
+                <EnglishQuizBanner />
 
                 <div className="mt-16 pt-8 border-t border-slate-100 text-center">
                     <p className="text-slate-600 mb-6">この記事が役に立ったらシェアをお願いします♪</p>

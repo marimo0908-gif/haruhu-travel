@@ -1,0 +1,27 @@
+
+> web-app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 862ms
+ ○ Compiling /studio/[[...index]] ...
+ ✓ Compiled /studio/[[...index]] in 7.6s (5448 modules)
+ ✓ Compiled in 185ms (2739 modules)
+ GET /studio 200 in 9794ms
+ GET /studio/structure 200 in 38ms
+ ✓ Compiled /favicon.ico in 466ms (2723 modules)
+ GET /favicon.ico 200 in 524ms
+ ✓ Compiled in 1844ms (5835 modules)
+ GET /studio 200 in 808ms
+ GET /studio/structure 200 in 94ms
+ GET /studio 200 in 23ms
+ GET /studio 200 in 39ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 2.2s (8133 modules)
+ GET /blog/first-overseas-trip-guam 200 in 2643ms
+ ✓ Compiled / in 366ms (8142 modules)
+[?25h
