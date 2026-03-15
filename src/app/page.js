@@ -11,6 +11,8 @@ export const metadata = {
   description: "マイルとポイ活で家族旅行へ。忙しいママでもできるお得術を公開中。「お金がない」「時間がない」を解決して、子供との思い出を作りましょう。",
 };
 
+export const revalidate = 60; // revalidate every 60 seconds
+
 export default async function Home() {
   let posts = [];
   try {

@@ -83,7 +83,7 @@ const blogPosts = [
             { _type: 'block', style: 'h2', children: [{ _type: 'span', text: '最後に' }] },
             { _type: 'block', children: [{ _type: 'span', text: '失敗もありましたが、それも含めてポイ活の面白さだと感じています。皆さんも、まずはクレジットカードなどハードルの低いものから始めて、少しずつステップアップしてみてくださいね。' }] },
             // Keeping the HTML part simple for now, as Sanity PortableText needs mapping for raw HTML
-            { _type: 'block', children: [{ _type: 'span', text: '👇 モッピーでお得にポイ活を始めよう！\nhttps://pc.moppy.jp/entry/invite.php?invite=TTFVA18b&type=service' }] }
+            { _type: 'block', children: [{ _type: 'span', text: '👇 モッピーでお得にポイ活を始めよう！\nhttps://pc.moppy.jp/entry/invite.php?invite=TTFVA18b' }] }
         ]
     },
     {

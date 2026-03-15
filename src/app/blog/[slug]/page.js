@@ -6,6 +6,8 @@ import { POST_QUERY, POST_SLUGS_QUERY } from "@/sanity/lib/queries";
 import { SanityContent } from "@/sanity/components/SanityContent";
 import EnglishQuizBanner from "@/components/blog/EnglishQuizBanner";
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
     try {
         const slugs = await client.fetch(POST_SLUGS_QUERY);

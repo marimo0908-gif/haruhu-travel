@@ -3,6 +3,8 @@ import PostCard from "@/components/blog/PostCard";
 import { client } from "@/sanity/client";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
 
+export const revalidate = 60;
+
 export default async function BlogPage() {
     let posts = [];
     try {
