@@ -64,35 +64,35 @@ export default async function BlogPostPage({ params }) {
 
     return (
         <article className="min-h-screen bg-white pb-24">
-            <div className="relative w-full bg-slate-200 overflow-hidden">
-                <div className="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 pt-8">
+            <div className="relative w-full bg-slate-200 overflow-hidden rounded-3xl shadow-lg">
+                <div className="absolute inset-0 bg-primary/10 mix-blend-multiply z-10 pointer-events-none" />
                 {imageSrc ? (
                     <div className="w-full aspect-video bg-slate-100 flex items-center justify-center overflow-hidden">
                         <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
                     </div>
                 ) : (
-                    <div className="h-[40vh] w-full flex items-center justify-center bg-slate-100 text-slate-300">
+                    <div className="aspect-video w-full flex items-center justify-center bg-slate-100 text-slate-300">
                         <span className="text-6xl">📷</span>
                     </div>
                 )}
 
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-6 sm:p-10 pt-24">
-                    <div className="mx-auto max-w-3xl">
-                        <div className="flex items-center gap-3 text-white/90 mb-4 text-sm font-medium">
-                            <span className="bg-primary px-3 py-1 rounded-full text-white">
-                                {category}
-                            </span>
-                            <span className="flex items-center gap-1">
-                                <Clock className="w-4 h-4" />
-                                {date}
-                            </span>
-                        </div>
-                        <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
-                            {title}
-                        </h1>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent p-6 sm:p-10 pt-32">
+                    <div className="flex items-center gap-3 text-white/90 mb-4 text-sm font-medium">
+                        <span className="bg-primary px-3 py-1 rounded-full text-white">
+                            {category}
+                        </span>
+                        <span className="flex items-center gap-1">
+                            <Clock className="w-4 h-4" />
+                            {date}
+                        </span>
                     </div>
+                    <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight">
+                        {title}
+                    </h1>
                 </div>
             </div>
+        </div>
 
             <div className="mx-auto max-w-3xl px-6 lg:px-8 mt-10">
                 <Link
