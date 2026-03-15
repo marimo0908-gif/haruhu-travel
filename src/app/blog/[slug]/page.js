@@ -58,7 +58,8 @@ export default async function BlogPostPage({ params }) {
 
     const title = post.title;
     const category = post.category?.title || post.category;
-    const date = post.publishedAt || post.date;
+    const rawDate = post.publishedAt || post.date;
+    const date = rawDate ? new Date(rawDate).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-') : '';
     const imageSrc = post.mainImage ? urlFor(post.mainImage).url() : post.imageUrl;
 
     return (
@@ -66,7 +67,9 @@ export default async function BlogPostPage({ params }) {
             <div className="relative w-full bg-slate-200 overflow-hidden">
                 <div className="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 pointer-events-none" />
                 {imageSrc ? (
-                    <img src={imageSrc} alt={title} className="w-full h-auto max-h-[75vh] object-contain bg-slate-900" />
+                    <div className="w-full aspect-video bg-slate-100 flex items-center justify-center overflow-hidden">
+                        <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
+                    </div>
                 ) : (
                     <div className="h-[40vh] w-full flex items-center justify-center bg-slate-100 text-slate-300">
                         <span className="text-6xl">📷</span>

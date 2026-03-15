@@ -42,7 +42,7 @@ export default async function Home() {
               記事一覧へ <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-3 xl:grid-cols-4">
             {displayPosts.map((post) => (
               <PostCard key={post._id} post={post} />
             ))}
