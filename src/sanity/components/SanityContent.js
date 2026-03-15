@@ -21,10 +21,28 @@ const components = {
         },
     },
     block: {
+        h2: ({ children }) => (
+            <h2 className="mt-10 mb-8 text-2xl font-bold text-slate-900">{children}</h2>
+        ),
         h3: ({ children }) => (
             <h3 className="mt-8 mb-4 text-xl font-bold text-slate-900">{children}</h3>
         ),
         normal: ({ children }) => <p className="mb-6 leading-relaxed text-slate-700">{children}</p>,
+        callout: ({ children }) => (
+            <p className="my-8 text-center text-xl font-bold text-slate-900">{children}</p>
+        ),
+    },
+    marks: {
+        link: ({ value, children }) => (
+            <a
+                href={value?.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline hover:text-blue-800"
+            >
+                {children}
+            </a>
+        ),
     },
 };
 
