@@ -7,21 +7,16 @@
   - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 862ms
- ○ Compiling /studio/[[...index]] ...
- ✓ Compiled /studio/[[...index]] in 7.6s (5448 modules)
- ✓ Compiled in 185ms (2739 modules)
- GET /studio 200 in 9794ms
- GET /studio/structure 200 in 38ms
- ✓ Compiled /favicon.ico in 466ms (2723 modules)
- GET /favicon.ico 200 in 524ms
- ✓ Compiled in 1844ms (5835 modules)
- GET /studio 200 in 808ms
- GET /studio/structure 200 in 94ms
- GET /studio 200 in 23ms
- GET /studio 200 in 39ms
- ○ Compiling /blog/[slug] ...
- ✓ Compiled /blog/[slug] in 2.2s (8133 modules)
- GET /blog/first-overseas-trip-guam 200 in 2643ms
- ✓ Compiled / in 366ms (8142 modules)
+ ✓ Ready in 1025ms
+ ○ Compiling /privacy ...
+ ✓ Compiled /privacy in 1228ms (604 modules)
+ GET /privacy 200 in 1393ms
+ ✓ Compiled in 124ms (296 modules)
+ ✓ Compiled /terms in 237ms (592 modules)
+ GET /terms 200 in 310ms
+ GET /privacy 200 in 19ms
+ GET /terms 200 in 21ms
+ GET /privacy 200 in 34ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1600ms (4781 modules)
 [?25h

@@ -1,4 +1,5 @@
 import { Inter, Noto_Sans_JP, Outfit } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -13,6 +14,9 @@ export const metadata = {
   },
   description: "年長さんのお子様を持つワーママ向け。マイルとポイ活で、家族旅行をもっと身近に。初心者でもできるお得な旅の始め方を発信中。",
   keywords: ["ワーママ", "家族旅行", "マイル", "ポイ活", "子連れ旅行", "節約"],
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -26,6 +30,7 @@ export default function RootLayout({ children }) {
           </main>
           <Footer />
         </div>
+        {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
       </body>
     </html>
   );

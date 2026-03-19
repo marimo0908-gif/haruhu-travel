@@ -1,5 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '../client';
+import AffiliateLink from '@/components/monetization/AffiliateLink';
 
 const components = {
     types: {
@@ -17,6 +18,18 @@ const components = {
                         </p>
                     )}
                 </div>
+            );
+        },
+        affiliateLink: ({ value }) => {
+            return (
+                <AffiliateLink
+                    title={value.title}
+                    description={value.description}
+                    href={value.href}
+                    badgeText={value.badgeText}
+                    points={value.points}
+                    buttonText={value.buttonText}
+                />
             );
         },
     },

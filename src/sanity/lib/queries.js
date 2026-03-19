@@ -8,7 +8,8 @@ export const POSTS_QUERY = groq`*[_type == "post"] | order(publishedAt desc) {
   mainImage,
   category->{title},
   publishedAt,
-  excerpt
+  excerpt,
+  isSponsored
 }`;
 
 export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0] {
@@ -20,7 +21,8 @@ export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0] {
   category->{title},
   publishedAt,
   excerpt,
-  body
+  body,
+  isSponsored
 }`;
 
 export const POST_SLUGS_QUERY = groq`*[_type == "post"] {

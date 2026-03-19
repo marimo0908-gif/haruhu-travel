@@ -58,7 +58,17 @@ export default {
                     type: 'image',
                     options: { hotspot: true },
                 },
+                {
+                    type: 'affiliateLink',
+                },
             ],
+        },
+        {
+            name: 'isSponsored',
+            title: 'Sponsored Content (PR)',
+            type: 'boolean',
+            description: 'Check this if the post contains affiliate links or is sponsored content',
+            initialValue: false,
         },
     ],
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Clock, ArrowRight } from "lucide-react";
 import { urlFor } from "@/sanity/client";
+import PRBadge from "@/components/monetization/PRBadge";
 
 export default function PostCard({ post }) {
     // Handle both Sanity data and local data
@@ -25,7 +26,8 @@ export default function PostCard({ post }) {
                             <span className="text-4xl">📷</span>
                         )}
                     </div>
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 left-4 flex gap-2">
+                        {post.isSponsored && <PRBadge className="shadow-sm backdrop-blur-sm bg-white/90" />}
                         <span className="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-primary shadow-sm backdrop-blur-sm">
                             {categoryName}
                         </span>
