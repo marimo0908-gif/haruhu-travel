@@ -5,6 +5,7 @@ import { client, urlFor } from "@/sanity/client";
 import { POST_QUERY, POST_SLUGS_QUERY } from "@/sanity/lib/queries";
 import { SanityContent } from "@/sanity/components/SanityContent";
 import EnglishQuizBanner from "@/components/blog/EnglishQuizBanner";
+import PRBadge from "@/components/monetization/PRBadge";
 
 export const revalidate = 60;
 
@@ -81,6 +82,7 @@ export default async function BlogPostPage({ params }) {
 
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent p-6 sm:p-10 pt-32">
                     <div className="flex items-center gap-3 text-white/90 mb-4 text-sm font-medium">
+                        {post.isSponsored && <PRBadge className="shadow-sm backdrop-blur-sm bg-white/90 text-slate-800" />}
                         <span className="bg-primary px-3 py-1 rounded-full text-white">
                             {category}
                         </span>
@@ -114,12 +116,22 @@ export default async function BlogPostPage({ params }) {
                 <div className="mt-16 pt-8 border-t border-slate-100 text-center">
                     <p className="text-slate-600 mb-6">この記事が役に立ったらシェアをお願いします♪</p>
                     <div className="flex justify-center gap-4">
-                        <button className="bg-black text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity">
+                        <a
+                            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://haruhu-travel.vercel.app/blog/${slug}`)}&text=${encodeURIComponent(`${title} | はるふートラベル`)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-black text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center justify-center"
+                        >
                             Xでシェアする
-                        </button>
-                        <button className="bg-[#06C755] text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity">
+                        </a>
+                        <a
+                            href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`https://haruhu-travel.vercel.app/blog/${slug}`)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-[#06C755] text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center justify-center"
+                        >
                             LINEで送る
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
