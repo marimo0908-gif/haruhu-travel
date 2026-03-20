@@ -60,6 +60,11 @@ export default function Footer() {
                                     最新キャンペーン
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/contact" className="text-slate-500 hover:text-primary text-sm transition-colors">
+                                    お問い合わせ
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

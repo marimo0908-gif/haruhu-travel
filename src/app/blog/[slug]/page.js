@@ -67,71 +67,81 @@ export default async function BlogPostPage({ params }) {
 
     return (
         <article className="min-h-screen bg-white pb-24">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 pt-8">
-            <div className="relative w-full bg-slate-200 overflow-hidden rounded-3xl shadow-lg">
-                <div className="absolute inset-0 bg-primary/10 mix-blend-multiply z-10 pointer-events-none" />
-                {imageSrc ? (
-                    <div className="w-full aspect-video bg-slate-100 flex items-center justify-center overflow-hidden">
-                        <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
-                    </div>
-                ) : (
-                    <div className="aspect-video w-full flex items-center justify-center bg-slate-100 text-slate-300">
-                        <span className="text-6xl">📷</span>
-                    </div>
-                )}
-
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent p-6 sm:p-10 pt-32">
-                    <div className="flex items-center gap-3 text-white/90 mb-4 text-sm font-medium">
-                        {post.isSponsored && <PRBadge className="shadow-sm backdrop-blur-sm bg-white/90 text-slate-800" />}
-                        <span className="bg-primary px-3 py-1 rounded-full text-white">
-                            {category}
-                        </span>
-                        <span className="flex items-center gap-1">
-                            <Clock className="w-4 h-4" />
-                            {date}
-                        </span>
-                    </div>
-                    <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight">
-                        {title}
-                    </h1>
-                </div>
-            </div>
-        </div>
-
-            <div className="mx-auto max-w-3xl px-6 lg:px-8 mt-10">
-                <Link
-                    href="/blog"
-                    className="inline-flex items-center text-sm text-slate-500 hover:text-primary mb-8"
-                >
-                    <ArrowLeft className="w-4 h-4 mr-1" />
-                    記事一覧に戻る
-                </Link>
-
-                <div className="prose prose-slate prose-lg max-w-none">
-                    <SanityContent value={post.body} />
+            <div className="max-w-4xl mx-auto px-6 lg:px-8 pt-12">
+                {/* Hero Section: Featured Image with Overlaid Text */}
+                <div className="relative w-full aspect-video bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl mb-10 border border-slate-100 group">
+                    {imageSrc ? (
+                        <div className="relative w-full h-full">
+                            <img 
+                                src={imageSrc} 
+                                alt={title} 
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                            />
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                            
+                            {/* Text Overlay at Bottom */}
+                            <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
+                                <div className="flex flex-wrap items-center gap-3 text-white/90 mb-4 text-sm font-semibold">
+                                    {post.isSponsored && (
+                                        <PRBadge className="bg-white text-slate-900 border-none shadow-lg px-3 py-1 text-[11px] font-black tracking-widest" />
+                                    )}
+                                    <span className="bg-primary/90 backdrop-blur-sm text-white px-3 py-1 rounded-lg">
+                                        {category}
+                                    </span>
+                                    <span className="w-1.5 h-1.5 bg-white/40 rounded-full" />
+                                    <span className="flex items-center gap-1.5 opacity-90 drop-shadow-md">
+                                        <Clock className="w-4 h-4" />
+                                        {date}
+                                    </span>
+                                </div>
+                                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.2] drop-shadow-xl tracking-tight">
+                                    {title}
+                                </h1>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="w-full h-full flex items-center justify-center text-slate-300">
+                            <span className="text-6xl text-slate-200">📷</span>
+                        </div>
+                    )}
                 </div>
 
-                <EnglishQuizBanner />
+                <div className="mx-auto max-w-3xl px-0 mt-0">
+                    <Link
+                        href="/blog"
+                        className="inline-flex items-center text-sm text-slate-500 hover:text-primary mb-8 transition-colors"
+                    >
+                        <ArrowLeft className="w-4 h-4 mr-1" />
+                        記事一覧に戻る
+                    </Link>
 
-                <div className="mt-16 pt-8 border-t border-slate-100 text-center">
-                    <p className="text-slate-600 mb-6">この記事が役に立ったらシェアをお願いします♪</p>
-                    <div className="flex justify-center gap-4">
-                        <a
-                            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://haruhu-travel.vercel.app/blog/${slug}`)}&text=${encodeURIComponent(`${title} | はるふートラベル`)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-black text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center justify-center"
-                        >
-                            Xでシェアする
-                        </a>
-                        <a
-                            href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`https://haruhu-travel.vercel.app/blog/${slug}`)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-[#06C755] text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center justify-center"
-                        >
-                            LINEで送る
-                        </a>
+                    <div className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:border-l-4 prose-h2:border-primary prose-h2:pl-4 prose-p:leading-relaxed mb-12">
+                        <SanityContent value={post.body} />
+                    </div>
+
+                    <EnglishQuizBanner />
+
+                    <div className="mt-16 pt-8 border-t border-slate-100 text-center">
+                        <p className="text-slate-600 mb-6">この記事が役に立ったらシェアをお願いします♪</p>
+                        <div className="flex justify-center gap-4">
+                            <a
+                                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://haruhu-travel.vercel.app/blog/${slug}`)}&text=${encodeURIComponent(`${title} | はるふートラベル`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-black text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center justify-center"
+                            >
+                                Xでシェアする
+                            </a>
+                            <a
+                                href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`https://haruhu-travel.vercel.app/blog/${slug}`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-[#06C755] text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center justify-center"
+                            >
+                                LINEで送る
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

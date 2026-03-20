@@ -9,12 +9,14 @@ export default function AffiliateLink({
     href,
     badgeText = "BEST BUY",
     points = [],
-    buttonText = "公式サイトを見る"
+    buttonText = "公式サイトを見る",
+    campaignImage,
+    children
 }) {
     return (
         <div className="my-8 overflow-hidden rounded-2xl border-2 border-primary/20 bg-white shadow-sm relative">
             {badgeText && (
-                <div className="absolute top-0 left-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-br-xl z-10">
+                <div className="absolute top-0 left-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-br-xl z-20">
                     {badgeText}
                 </div>
             )}
@@ -51,6 +53,23 @@ export default function AffiliateLink({
                     </div>
                 </div>
             </div>
+
+            {campaignImage && (
+                <div className="border-t border-primary/10 relative aspect-[3420/910] w-full overflow-hidden">
+                    <img 
+                        src={typeof campaignImage === 'string' ? campaignImage : campaignImage.url} 
+                        alt={title} 
+                        className="w-full absolute top-0 left-0"
+                        style={{ transform: campaignImage.transform || 'translateY(-18.06%)' }}
+                    />
+                </div>
+            )}
+
+            {children && (
+                <div className="border-t border-primary/10">
+                    {children}
+                </div>
+            )}
         </div>
     );
 }

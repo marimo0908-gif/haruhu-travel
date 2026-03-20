@@ -9,7 +9,7 @@ export const POSTS_QUERY = groq`*[_type == "post"] | order(publishedAt desc) {
   category->{title},
   publishedAt,
   excerpt,
-  isSponsored
+  "isSponsored": isSponsored || count(body[_type == "affiliateLink"]) > 0 || count(body[].children[text match "moppy*"]) > 0 || count(body[].children[text match "hapitas*"]) > 0 || count(body[].children[text match "モッピー*"]) > 0 || count(body[].children[text match "ハピタス*"]) > 0
 }`;
 
 export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0] {
@@ -22,7 +22,7 @@ export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0] {
   publishedAt,
   excerpt,
   body,
-  isSponsored
+  "isSponsored": isSponsored || count(body[_type == "affiliateLink"]) > 0 || count(body[].children[text match "moppy*"]) > 0 || count(body[].children[text match "hapitas*"]) > 0 || count(body[].children[text match "モッピー*"]) > 0 || count(body[].children[text match "ハピタス*"]) > 0
 }`;
 
 export const POST_SLUGS_QUERY = groq`*[_type == "post"] {

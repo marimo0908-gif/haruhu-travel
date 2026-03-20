@@ -29,6 +29,11 @@ const components = {
                     badgeText={value.badgeText}
                     points={value.points}
                     buttonText={value.buttonText}
+                    campaignImage={value.campaignImage ? {
+                        url: urlFor(value.campaignImage).url(),
+                        // Default transform for the point campaign banner
+                        transform: 'translateY(-18.06%)'
+                    } : null}
                 />
             );
         },

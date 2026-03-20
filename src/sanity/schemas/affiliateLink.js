@@ -39,5 +39,14 @@ export default {
             type: 'string',
             initialValue: '公式サイトを見る',
         },
+        {
+            name: 'campaignImage',
+            title: 'Campaign Image',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+            description: 'Optional campaign banner image to display at the top of the card',
+        },
     ]
 };
