@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Mail, User, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
-export default function ContactPage() {
+function ContactContent() {
     const searchParams = useSearchParams();
     const [status, setStatus] = useState('idle'); // idle, sending, success, error
     const [formData, setFormData] = useState({
@@ -171,5 +171,13 @@ export default function ContactPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function ContactPage() {
+    return (
+        <Suspense fallback={<div className="container mx-auto px-6 py-12 text-center text-slate-500">読み込み中...</div>}>
+            <ContactContent />
+        </Suspense>
     );
 }
