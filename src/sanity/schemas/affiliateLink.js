@@ -48,5 +48,17 @@ export default {
             },
             description: 'Optional campaign banner image to display at the top of the card',
         },
+        {
+            name: 'relatedArticleTitle',
+            title: 'Related Article Title',
+            type: 'string',
+            description: 'e.g. カード発行前に読みたい記事',
+        },
+        {
+            name: 'relatedArticleHref',
+            title: 'Related Article URL',
+            type: 'string',
+            description: 'e.g. /blog/amex-warning',
+        },
     ]
 };

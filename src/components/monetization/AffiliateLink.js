@@ -11,6 +11,8 @@ export default function AffiliateLink({
     points = [],
     buttonText = "公式サイトを見る",
     campaignImage,
+    relatedArticleTitle,
+    relatedArticleHref,
     children
 }) {
     return (
@@ -53,6 +55,28 @@ export default function AffiliateLink({
                     </div>
                 </div>
             </div>
+
+            {relatedArticleHref && (
+                <div className="px-6 pb-6 sm:px-8 border-t border-primary/5 pt-6 bg-secondary/5">
+                    <a 
+                        href={relatedArticleHref}
+                        className="group flex items-center justify-between p-4 rounded-xl bg-white border border-secondary/20 shadow-sm hover:border-secondary/40 hover:shadow-md transition-all duration-300"
+                    >
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                                <Gift className="w-5 h-5" />
+                            </div>
+                            <div>
+                                <p className="text-xs font-bold text-secondary mb-0.5">CHECK ARTICLE</p>
+                                <p className="text-sm font-bold text-slate-900 group-hover:text-secondary transition-colors">
+                                    {relatedArticleTitle || "関連記事を読む"}
+                                </p>
+                            </div>
+                        </div>
+                        <ExternalLink className="w-5 h-5 text-slate-300 group-hover:text-secondary transition-colors" />
+                    </a>
+                </div>
+            )}
 
             {campaignImage && (
                 <div className="border-t border-primary/10 relative aspect-[3420/910] w-full overflow-hidden">

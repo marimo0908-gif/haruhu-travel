@@ -29,6 +29,8 @@ const components = {
                     badgeText={value.badgeText}
                     points={value.points}
                     buttonText={value.buttonText}
+                    relatedArticleTitle={value.relatedArticleTitle}
+                    relatedArticleHref={value.relatedArticleHref}
                     campaignImage={value.campaignImage ? {
                         url: urlFor(value.campaignImage).url(),
                         // Default transform for the point campaign banner
