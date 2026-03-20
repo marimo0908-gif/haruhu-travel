@@ -11,6 +11,7 @@ function ContactContent() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        emailConfirm: '',
         subject: 'General Inquiry',
         message: ''
     });
@@ -30,17 +31,34 @@ function ContactContent() {
         e.preventDefault();
         setStatus('sending');
         
-        // Simulating API call
-        setTimeout(() => {
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || '送信に失敗しました');
+            }
+
             setStatus('success');
             // Reset form
             setFormData({
                 name: '',
                 email: '',
+                emailConfirm: '',
                 subject: 'General Inquiry',
                 message: ''
             });
-        }, 1500);
+        } catch (error) {
+            console.error('Submission error:', error);
+            setStatus('error');
+            alert(error.message || 'エラーが発生しました。時間をおいて再度お試しください。');
+        }
     };
 
     const handleChange = (e) => {
@@ -96,21 +114,29 @@ function ContactContent() {
 
                 <div className="md:col-span-2">
                     <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 space-y-6">
+                        <div className="bg-blue-50/50 border border-blue-100/50 p-4 rounded-2xl flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5" />
+                            <p className="text-sm text-slate-600">
+                                メールアドレスに誤りがあると、お返事がお届けできません。入力内容にお間違いがないか、今一度ご確認ください。
+                            </p>
+                        </div>
+
+                        <div className="space-y-2">
+                            <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
+                                <User className="w-4 h-4" /> お名前
+                            </label>
+                            <input
+                                type="text"
+                                name="name"
+                                required
+                                value={formData.name}
+                                onChange={handleChange}
+                                placeholder="はルふー 太郎"
+                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-300"
+                            />
+                        </div>
+
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div className="space-y-2">
-                                <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
-                                    <User className="w-4 h-4" /> お名前
-                                </label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder="はるふー 太郎"
-                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-300"
-                                />
-                            </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
                                     <Mail className="w-4 h-4" /> メールアドレス
@@ -124,6 +150,23 @@ function ContactContent() {
                                     placeholder="example@mail.com"
                                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-300"
                                 />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
+                                    <Mail className="w-4 h-4" /> メールアドレス（確認用）
+                                </label>
+                                <input
+                                    type="email"
+                                    name="emailConfirm"
+                                    required
+                                    value={formData.emailConfirm || ''}
+                                    onChange={handleChange}
+                                    placeholder="もう一度入力してください"
+                                    className={`w-full px-4 py-3 rounded-xl border outline-none transition-all placeholder:text-slate-300 ${formData.emailConfirm && formData.email !== formData.emailConfirm ? 'border-red-300 focus:ring-red-100' : 'border-slate-200 focus:ring-primary/20 focus:border-primary'}`}
+                                />
+                                {formData.emailConfirm && formData.email !== formData.emailConfirm && (
+                                    <p className="text-xs text-red-500 font-medium mt-1">メールアドレスが一致しません</p>
+                                )}
                             </div>
                         </div>
 
@@ -162,7 +205,7 @@ function ContactContent() {
                             type="submit" 
                             variant="primary" 
                             className="w-full py-4 text-lg shadow-lg shadow-primary/20 mt-4 h-auto"
-                            disabled={status === 'sending'}
+                            disabled={status === 'sending' || (formData.emailConfirm && formData.email !== formData.emailConfirm)}
                         >
                             {status === 'sending' ? '送信中...' : 'メッセージを送信する'} 
                             <Send className="ml-2 w-5 h-5" />
