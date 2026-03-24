@@ -48,11 +48,6 @@ export default function AffiliateLink({
                     <Button href={href} variant="accent" className="w-full sm:w-auto text-lg py-4 shadow-lg shadow-accent/20">
                         {buttonText} <ExternalLink className="ml-2 w-5 h-5" />
                     </Button>
-                    <div className="text-center">
-                        <span className="text-[10px] text-slate-400">
-                            ※公式サイトへ移動します
-                        </span>
-                    </div>
                 </div>
             </div>
 

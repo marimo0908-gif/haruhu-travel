@@ -25,6 +25,7 @@ const newBody = [
     { _type: 'block', _key: 'b12', children: [{ _type: 'span', _key: 's12', text: '今は焦らず、冷静に案件に取り組めるようになりました\nポイ活は「正しく知ること」が、損をせずに利益を最大化する一番の近道だと痛感しています。' }] },
     { _type: 'block', _key: 'b13', style: 'h2', children: [{ _type: 'span', _key: 's13', text: '最後に' }] },
     { _type: 'block', _key: 'b14', children: [{ _type: 'span', _key: 's14', text: '失敗もありましたが、それも含めてポイ活の面白さだと感じています。\nまずはクレジットカードなどハードルの低いものから始めて、少しずつステップアップしてみてくださいね。' }] },
+    { _type: 'block', _key: 'b15', children: [{ _type: 'span', _key: 's15', text: '👇 モッピーでお得にポイ活を始めよう！\nhttps://pc.moppy.jp/entry/invite.php?invite=TTFVA18b' }] },
 ];
 
 async function run() {
