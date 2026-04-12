@@ -13,10 +13,22 @@ export default function AffiliateLink({
     campaignImage,
     relatedArticleTitle,
     relatedArticleHref,
+    trackerImageUrl,
     children
 }) {
     return (
         <div className="my-8 overflow-hidden rounded-2xl border-2 border-primary/20 bg-white shadow-sm relative">
+            {trackerImageUrl && (
+                <img 
+                    src={trackerImageUrl} 
+                    width="1" 
+                    height="1" 
+                    border="0" 
+                    alt="" 
+                    className="absolute opacity-0 pointer-events-none" 
+                    aria-hidden="true"
+                />
+            )}
             {badgeText && (
                 <div className="absolute top-0 left-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-br-xl z-20">
                     {badgeText}
@@ -74,12 +86,11 @@ export default function AffiliateLink({
             )}
 
             {campaignImage && (
-                <div className="border-t border-primary/10 relative aspect-[3420/910] w-full overflow-hidden">
+                <div className="border-t border-primary/10 w-full overflow-hidden bg-slate-50 flex justify-center">
                     <img 
                         src={typeof campaignImage === 'string' ? campaignImage : campaignImage.url} 
                         alt={title} 
-                        className="w-full absolute top-0 left-0"
-                        style={{ transform: campaignImage.transform || 'translateY(-18.06%)' }}
+                        className="max-w-full h-auto"
                     />
                 </div>
             )}

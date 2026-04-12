@@ -8,7 +8,7 @@ export async function POST(req) {
     const { name, email, subject, message } = await req.json();
 
     if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+      return new Response(JSON.stringify({ error: '必須項目が入力されていません' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -63,7 +63,7 @@ export async function POST(req) {
     });
   } catch (error) {
     console.error('API error:', error);
-    return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
+    return new Response(JSON.stringify({ error: 'サーバーエラーが発生しました' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });

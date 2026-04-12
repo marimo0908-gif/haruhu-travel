@@ -70,6 +70,14 @@ export default {
             description: 'Check this if the post contains affiliate links or is sponsored content',
             initialValue: false,
         },
+        {
+            name: 'views',
+            title: 'Views',
+            type: 'number',
+            initialValue: 0,
+            readOnly: true,
+            description: 'Total number of views (automatically updated)',
+        },
     ],
 
     preview: {
@@ -77,10 +85,14 @@ export default {
             title: 'title',
             author: 'author',
             media: 'mainImage',
+            views: 'views',
         },
         prepare(selection) {
-            const { author } = selection;
-            return { ...selection, subtitle: author && `by ${author}` };
+            const { author, views } = selection;
+            return { 
+                ...selection, 
+                subtitle: `${author ? `by ${author}` : ''} ${views ? `| ${views} views` : '| 0 views'}`.trim() 
+            };
         },
     },
 };

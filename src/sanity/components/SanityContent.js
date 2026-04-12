@@ -31,11 +31,12 @@ const components = {
                     buttonText={value.buttonText}
                     relatedArticleTitle={value.relatedArticleTitle}
                     relatedArticleHref={value.relatedArticleHref}
-                    campaignImage={value.campaignImage ? {
-                        url: urlFor(value.campaignImage).url(),
-                        // Default transform for the point campaign banner
-                        transform: 'translateY(-18.06%)'
-                    } : null}
+                    trackerImageUrl={value.trackerImageUrl}
+                    campaignImage={value.campaignImage ? (
+                        typeof value.campaignImage === 'string' 
+                            ? value.campaignImage 
+                            : { url: urlFor(value.campaignImage).url() }
+                    ) : null}
                 />
             );
         },

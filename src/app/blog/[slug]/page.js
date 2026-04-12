@@ -6,6 +6,7 @@ import { POST_QUERY, POST_SLUGS_QUERY } from "@/sanity/lib/queries";
 import { SanityContent } from "@/sanity/components/SanityContent";
 import EnglishQuizBanner from "@/components/blog/EnglishQuizBanner";
 import PRBadge from "@/components/monetization/PRBadge";
+import ViewCounter from "@/components/blog/ViewCounter";
 
 export const revalidate = 60;
 
@@ -67,6 +68,7 @@ export default async function BlogPostPage({ params }) {
 
     return (
         <article className="min-h-screen bg-white pb-24">
+            <ViewCounter slug={slug} />
             <div className="max-w-4xl mx-auto px-6 lg:px-8 pt-12">
                 {/* Hero Section: Featured Image with Overlaid Text */}
                 <div className="relative w-full aspect-video bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl mb-10 border border-slate-100 group">

@@ -12,7 +12,7 @@ function ContactContent() {
         name: '',
         email: '',
         emailConfirm: '',
-        subject: 'General Inquiry',
+        subject: '一般的なお問い合わせ',
         message: ''
     });
 
@@ -51,7 +51,7 @@ function ContactContent() {
                 name: '',
                 email: '',
                 emailConfirm: '',
-                subject: 'General Inquiry',
+                subject: '一般的なお問い合わせ',
                 message: ''
             });
         } catch (error) {
@@ -180,9 +180,9 @@ function ContactContent() {
                                 onChange={handleChange}
                                 className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                             >
-                                <option value="General Inquiry">一般的なお問い合わせ</option>
+                                <option value="一般的なお問い合わせ">一般的なお問い合わせ</option>
                                 <option value="アメックス・ゴールド・プリファード紹介依頼">アメックス・ゴールド・プリファード紹介依頼</option>
-                                <option value="Other">その他</option>
+                                <option value="その他">その他</option>
                             </select>
                         </div>
 

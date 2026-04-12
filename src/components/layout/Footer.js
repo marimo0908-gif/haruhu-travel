@@ -73,7 +73,7 @@ export default function Footer() {
 
                 <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-xs text-slate-400">
-                        &copy; {new Date().getFullYear()} Harufoo Travel. All rights reserved.
+                        &copy; {new Date().getFullYear()} はるふートラベル. All rights reserved.
                     </p>
                     <div className="flex space-x-6 text-xs text-slate-400">
                         <Link href="/privacy" className="hover:text-foreground">プライバシーポリシー</Link>

@@ -60,5 +60,11 @@ export default {
             type: 'string',
             description: 'e.g. /blog/amex-warning',
         },
+        {
+            name: 'trackerImageUrl',
+            title: 'Tracking Pixel URL',
+            type: 'string',
+            description: 'URL for 1x1 tracking pixel (e.g. for A8.net). This will be rendered as an invisible image.',
+        },
     ]
 };
