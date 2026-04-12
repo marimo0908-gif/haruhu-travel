@@ -6,7 +6,7 @@ export const POSTS_QUERY = groq`*[_type == "post"] | order(publishedAt desc) {
   slug,
   author,
   mainImage,
-  category->{title},
+  "category": categories[0]->{title},
   publishedAt,
   excerpt,
   "isSponsored": isSponsored || count(body[_type == "affiliateLink"]) > 0 || count(body[].children[text match "moppy*"]) > 0 || count(body[].children[text match "hapitas*"]) > 0 || count(body[].children[text match "モッピー*"]) > 0 || count(body[].children[text match "ハピタス*"]) > 0
@@ -18,7 +18,7 @@ export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0] {
   slug,
   author,
   mainImage,
-  category->{title},
+  "category": categories[0]->{title},
   publishedAt,
   excerpt,
   body,
