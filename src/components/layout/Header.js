@@ -6,6 +6,8 @@ import { Menu, X, Plane } from "lucide-react";
 
 const navigation = [
     { name: "ホーム", href: "/" },
+    { name: "宿泊レビュー", href: "/blog?category=宿泊レビュー" },
+    { name: "マイル・ポイ活", href: "/blog?category=マイル・ポイ活" },
 ];
 
 export default function Header() {
