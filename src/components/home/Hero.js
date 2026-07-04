@@ -15,20 +15,13 @@ export default function Hero() {
                 />
             </div>
 
-            {/* Decorative Logo - Enlarged and moved to absolute top-right corner */}
-            <div className="absolute top-16 right-2 sm:top-24 sm:right-8 opacity-40 animate-pulse-slow pointer-events-none z-10">
-                <img
-                    src="/はるふーtravel.png"
-                    alt=""
-                    className="h-20 sm:h-64 w-auto object-contain"
-                    aria-hidden="true"
-                />
-            </div>
-
-            <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:px-8 lg:py-40">
+            <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 sm:pb-32 lg:px-8 lg:py-36">
                 <div className="mx-auto max-w-3xl text-center">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1.5 text-sm font-bold text-primary shadow-sm ring-1 ring-sky-100 backdrop-blur">
+                        ✈️ ワーママのための賢い旅の始め方
+                    </span>
 
-                    <h1 className="mt-10 text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
+                    <h1 className="mt-8 text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
                         もっと<span className="text-primary">自由</span>に旅しよう
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-slate-600">

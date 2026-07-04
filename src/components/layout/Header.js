@@ -30,9 +30,18 @@ export default function Header() {
 
                 {/* Logo - centered on mobile, left on desktop */}
                 <div className="flex items-center lg:absolute lg:left-8">
-                    <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2 group">
-                        {/* Logo Image */}
-                        <img src="/はるふーtravel.png" alt="はるふートラベル" className="h-10 sm:h-12 w-auto object-contain" />
+                    <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2.5 group">
+                        {/* Logo mark: the source PNG has large white padding, so crop it by scaling inside a fixed frame */}
+                        <span className="relative block h-11 w-11 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full">
+                            <img
+                                src="/はるふーtravel.png"
+                                alt=""
+                                className="absolute inset-0 h-full w-full object-contain scale-[1.7] group-hover:rotate-6 transition-transform duration-300"
+                            />
+                        </span>
+                        <span className="text-lg sm:text-2xl font-bold tracking-tight text-slate-800 group-hover:text-primary transition-colors">
+                            はるふートラベル
+                        </span>
                     </Link>
                 </div>
 
@@ -56,8 +65,11 @@ export default function Header() {
             {mobileMenuOpen && (
                 <div className="lg:hidden fixed inset-0 z-50 bg-white/95 backdrop-blur-sm p-4">
                     <div className="flex items-center justify-between mb-8">
-                        <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-                            <img src="/はるふーtravel.png" alt="はるふートラベル" className="h-10 w-auto object-contain" />
+                        <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2.5">
+                            <span className="relative block h-11 w-11 shrink-0 overflow-hidden rounded-full">
+                                <img src="/はるふーtravel.png" alt="" className="absolute inset-0 h-full w-full object-contain scale-[1.7]" />
+                            </span>
+                            <span className="text-lg font-bold tracking-tight text-slate-800">はるふートラベル</span>
                         </Link>
                         <button
                             type="button"
