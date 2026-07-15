@@ -12,7 +12,7 @@ export default function Footer() {
 
                     {/* Brand Column */}
                     <div className="space-y-4">
-                        <span className="text-xl font-bold tracking-tight text-foreground flex items-center gap-2.5">
+                        <span className="font-maru text-xl font-bold tracking-tight text-foreground flex items-center gap-2.5">
                             {/* The source PNG has large white padding, so crop it by scaling inside a fixed frame */}
                             <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-slate-200 shadow-sm">
                                 <Image

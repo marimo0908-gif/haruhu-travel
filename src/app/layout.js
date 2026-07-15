@@ -15,10 +15,10 @@ const zenMaru = Zen_Maru_Gothic({
 export const metadata = {
   title: {
     template: "%s | はるふートラベル",
-    default: "はるふートラベル | ワーママのための賢い旅ブログ",
+    default: "はるふートラベル | ママのための賢い旅ブログ",
   },
-  description: "年長さんのお子様を持つワーママ向け。マイルとポイ活で、家族旅行をもっと身近に。初心者でもできるお得な旅の始め方を発信中。",
-  keywords: ["ワーママ", "家族旅行", "マイル", "ポイ活", "子連れ旅行", "節約"],
+  description: "年長さんのお子様を持つママ向け。マイルとポイ活で、家族旅行をもっと身近に。初心者でもできるお得な旅の始め方を発信中。",
+  keywords: ["ママ", "家族旅行", "マイル", "ポイ活", "子連れ旅行", "節約"],
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
