@@ -6,8 +6,8 @@ import { Menu, X, Plane } from "lucide-react";
 
 const navigation = [
     { name: "ホーム", href: "/", icon: "/icons/icon-b-h-logo.svg", note: "トップページへ" },
-    { name: "宿泊レビュー", href: "/blog?category=宿泊レビュー", icon: "/icons/icon-a-plane.svg", note: "実際に泊まったホテルの体験記" },
-    { name: "マイル・ポイ活", href: "/blog?category=マイル・ポイ活", icon: "/icons/icon-c-suitcase.svg", note: "旅をお得にするコツ" },
+    { name: "宿泊レビュー", href: "/blog?category=宿泊レビュー", icon: "/icons/icon-c-suitcase.svg", note: "実際に泊まったホテルの体験記" },
+    { name: "マイル・ポイ活", href: "/blog?category=マイル・ポイ活", icon: "/icons/icon-a-plane.svg", note: "旅をお得にするコツ" },
 ];
 
 export default function Header() {

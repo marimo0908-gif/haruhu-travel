@@ -35,7 +35,7 @@ export default async function Home() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
             <div>
               <div className="flex items-center gap-2 text-primary font-bold mb-2">
-                <img src="/icons/icon-a-plane.svg" alt="" className="w-6 h-6 rounded-lg" />
+                <img src="/icons/icon-c-suitcase.svg" alt="" className="w-6 h-6 rounded-lg" />
                 <span className="text-sm tracking-widest uppercase">STAY REVIEWS</span>
               </div>
               <h2 className="font-maru text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
@@ -61,7 +61,7 @@ export default async function Home() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
             <div>
               <div className="flex items-center gap-2 text-emerald-600 font-bold mb-2">
-                <img src="/icons/icon-c-suitcase.svg" alt="" className="w-6 h-6 rounded-lg" />
+                <img src="/icons/icon-a-plane.svg" alt="" className="w-6 h-6 rounded-lg" />
                 <span className="text-sm tracking-widest uppercase">MILES & POINTS</span>
               </div>
               <h2 className="font-maru text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
