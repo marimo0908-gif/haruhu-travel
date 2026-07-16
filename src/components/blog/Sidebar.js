@@ -74,26 +74,29 @@ export default function Sidebar({ categories = [], posts = [] }) {
                 </ul>
             </div>
 
-            {/* Inquiry/Contact Section */}
-            <div className="bg-gradient-to-br from-[#e0f2fe] via-[#f8fafc] to-[#ffe4e6] rounded-2xl p-6 shadow-md border border-sky-200/50 overflow-hidden relative group">
-                <div className="relative z-10">
-                    <h4 className="font-bold mb-2 flex items-center gap-2 text-slate-900">
-                        <span className="text-xl">✉️</span>
+            {/* Inquiry/Contact Section - エアメール風 */}
+            <div
+                className="rounded-2xl p-2 shadow-md"
+                style={{
+                    background:
+                        "repeating-linear-gradient(45deg, #7dd3fc 0 10px, #ffffff 10px 20px, #fda4af 20px 30px, #ffffff 30px 40px)",
+                }}
+            >
+                <div className="bg-white rounded-xl p-5">
+                    <h4 className="font-maru font-bold mb-2 flex items-center gap-2 text-slate-800">
+                        <img src="/icons/icon-a-plane.svg" alt="" className="w-6 h-6 rounded-md" />
                         お問い合わせ
                     </h4>
-                    <p className="text-xs text-slate-700 mb-4 leading-relaxed font-bold">
+                    <p className="text-xs text-slate-600 mb-4 leading-relaxed">
                         ブログへのご感想や、マイル・旅行に関するご質問など、お気軽にお寄せください。
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-block w-full text-center bg-primary text-white py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all transform active:scale-95 shadow-md"
+                        className="inline-block w-full text-center bg-primary text-white py-2.5 rounded-full text-sm font-bold hover:bg-primary/90 transition-all transform active:scale-95 shadow-md shadow-sky-200"
                     >
                         メッセージを送る
                     </Link>
                 </div>
-                {/* Decorative Elements - Higher contrast blue and pink */}
-                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-[#7dd3fc]/40 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-                <div className="absolute -left-4 -top-4 w-24 h-24 bg-[#fda4af]/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
             </div>
         </aside>
     );
