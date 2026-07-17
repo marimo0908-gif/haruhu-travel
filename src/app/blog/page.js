@@ -5,6 +5,8 @@ import { client } from "@/sanity/client";
 import { POSTS_QUERY, CATEGORIES_QUERY } from "@/sanity/lib/queries";
 
 export const revalidate = 60;
+export const runtime = 'edge';
+
 
 export default async function BlogPage({ searchParams }) {
     const selectedCategory = searchParams.category;

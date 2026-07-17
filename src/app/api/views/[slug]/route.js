@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { client } from '@/sanity/client.server';
 
+export const runtime = 'edge';
+
+
 export async function POST(request, { params }) {
     const { slug } = params;
 

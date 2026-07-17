@@ -10,6 +10,8 @@ import ViewCounter from "@/components/blog/ViewCounter";
 import Sidebar from "@/components/blog/Sidebar";
 
 export const revalidate = 60;
+export const runtime = 'edge';
+
 
 export async function generateStaticParams() {
     try {

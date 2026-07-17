@@ -45,6 +45,11 @@ export default function Footer() {
                             <a href="https://www.youtube.com/@haruhu-26271" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-500 transition-colors hover:scale-110 transform duration-200">
                                 <Youtube className="h-5 w-5" />
                             </a>
+                            <a href="https://note.com/juicy_roses5378" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#2cb696] transition-colors hover:scale-110 transform duration-200" title="note">
+                                <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                                    <path d="M17.06 20.17h-2.14v-7.64c0-1.89-.54-2.84-1.62-2.84-.66 0-1.22.36-1.67 1.07v9.41H9.49V3.83h2.14v3.13c.64-1.12 1.48-1.68 2.53-1.68 2.12 0 3.18 1.44 3.18 4.31v10.58z"/>
+                                </svg>
+                            </a>
                             <a href="https://room.rakuten.co.jp/room_6f3e1c023f/items" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#bf0000] transition-colors hover:scale-110 transform duration-200" title="楽天ROOM">
                                 <ShoppingBag className="h-5 w-5" />
                             </a>

@@ -1,6 +1,8 @@
 import { Resend } from 'resend';
 
+export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
+
 
 export async function POST(req) {
   const resend = new Resend(process.env.RESEND_API_KEY);
