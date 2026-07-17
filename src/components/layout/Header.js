@@ -34,7 +34,7 @@ export default function Header() {
                         {/* Logo mark: the source PNG has large white padding, so crop it by scaling inside a fixed frame */}
                         <span className="relative block h-11 w-11 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full">
                             <img
-                                src="/はるふーtravel.png"
+                                src="/haruhu-travel-logo.png"
                                 alt=""
                                 className="absolute inset-0 h-full w-full object-contain scale-[1.7] group-hover:rotate-6 transition-transform duration-300"
                             />
@@ -71,7 +71,7 @@ export default function Header() {
                     <div className="flex items-center justify-between mb-10">
                         <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2.5" onClick={() => setMobileMenuOpen(false)}>
                             <span className="relative block h-11 w-11 shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-slate-200">
-                                <img src="/はるふーtravel.png" alt="" className="absolute inset-0 h-full w-full object-contain scale-[1.7]" />
+                                <img src="/haruhu-travel-logo.png" alt="" className="absolute inset-0 h-full w-full object-contain scale-[1.7]" />
                             </span>
                             <span className="font-maru text-lg font-bold tracking-tight text-slate-800">はるふートラベル</span>
                         </Link>
