@@ -9,7 +9,6 @@ import PRBadge from "@/components/monetization/PRBadge";
 import ViewCounter from "@/components/blog/ViewCounter";
 import Sidebar from "@/components/blog/Sidebar";
 
-export const revalidate = 60;
 export const runtime = 'edge';
 
 

@@ -4,7 +4,6 @@ import Sidebar from "@/components/blog/Sidebar";
 import { client } from "@/sanity/client";
 import { POSTS_QUERY, CATEGORIES_QUERY } from "@/sanity/lib/queries";
 
-export const revalidate = 60;
 export const runtime = 'edge';
 
 
