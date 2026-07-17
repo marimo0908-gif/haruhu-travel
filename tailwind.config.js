@@ -27,6 +27,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"Noto Sans JP"', '"Outfit"', 'sans-serif'],
+        maru: ['var(--font-zen-maru)', '"Noto Sans JP"', 'sans-serif'],
       },
       borderRadius: {
         'xl': '1rem',

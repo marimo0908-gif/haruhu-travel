@@ -1,34 +1,36 @@
 import Link from "next/link";
-import { ArrowRight, Star } from "lucide-react";
 
 export default function Hero() {
     return (
         <div className="relative isolate overflow-hidden bg-white">
-            {/* Background patterns/gradients */}
-            <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-                <div
-                    className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary to-accent opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-                    style={{
-                        clipPath:
-                            'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                    }}
-                />
-            </div>
+            {/* やわらかい背景（空色→白） */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sky-50 via-rose-100/40 to-white" aria-hidden="true" />
 
-            {/* Decorative Logo - Enlarged and moved to absolute top-right corner */}
-            <div className="absolute top-16 right-2 sm:top-24 sm:right-8 opacity-40 animate-pulse-slow pointer-events-none z-10">
-                <img
-                    src="/はるふーtravel.png"
-                    alt=""
-                    className="h-20 sm:h-64 w-auto object-contain"
-                    aria-hidden="true"
+            {/* 点線の飛行ルート＋紙飛行機（サイトのシグネチャー） */}
+            <svg
+                className="absolute inset-x-0 top-8 -z-10 mx-auto w-full max-w-5xl text-sky-200"
+                viewBox="0 0 1000 220"
+                fill="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M-20 190 C 200 80, 420 200, 620 110 S 920 40, 1030 70"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeDasharray="1 14"
+                    strokeLinecap="round"
                 />
-            </div>
+                <circle cx="850" cy="62" r="34" fill="#fde68a" opacity="0.55" />
+            </svg>
 
-            <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:px-8 lg:py-40">
+            <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 sm:pb-32 lg:px-8 lg:py-32">
                 <div className="mx-auto max-w-3xl text-center">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-bold text-primary shadow-sm ring-1 ring-sky-100">
+                        <img src="/icons/icon-a-plane.svg" alt="" className="h-5 w-5 rounded-md" />
+                        ママのための賢い旅の始め方
+                    </span>
 
-                    <h1 className="mt-10 text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
+                    <h1 className="font-maru mt-8 text-4xl font-bold tracking-tight text-slate-800 sm:text-6xl">
                         もっと<span className="text-primary">自由</span>に旅しよう
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-slate-600">
@@ -39,15 +41,12 @@ export default function Hero() {
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <Link
                             href="/start"
-                            className="rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all hover:scale-105"
+                            className="rounded-full bg-primary px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-sky-200 hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all hover:scale-105"
                         >
                             お得な旅の始め方
                         </Link>
                     </div>
                 </div>
-
-                {/* Hero Image / Composition */}
-
             </div>
         </div>
     );

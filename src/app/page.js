@@ -1,12 +1,12 @@
 import Hero from "@/components/home/Hero";
 import PostCard from "@/components/blog/PostCard";
 import Link from "next/link";
-import { ArrowRight, Hotel, Banknote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { client } from "@/sanity/client";
 import { POSTS_BY_CATEGORY_QUERY } from "@/sanity/lib/queries";
 
 export const metadata = {
-  title: "ホーム | はるふートラベル - ワーママのための賢い旅の始め方",
+  title: "ホーム | はるふートラベル - ママのための賢い旅の始め方",
   description: "マイルとポイ活で家族旅行へ。忙しいママでもできるお得術を公開中。「お金がない」「時間がない」を解決して、子供との思い出を作りましょう。",
 };
 
@@ -35,10 +35,10 @@ export default async function Home() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
             <div>
               <div className="flex items-center gap-2 text-primary font-bold mb-2">
-                <Hotel className="w-5 h-5" />
+                <img src="/icons/icon-c-suitcase.svg" alt="" className="w-6 h-6 rounded-lg" />
                 <span className="text-sm tracking-widest uppercase">STAY REVIEWS</span>
               </div>
-              <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+              <h2 className="font-maru text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
                 実際に泊まったホテルの体験記
               </h2>
             </div>
@@ -61,10 +61,10 @@ export default async function Home() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
             <div>
               <div className="flex items-center gap-2 text-emerald-600 font-bold mb-2">
-                <Banknote className="w-5 h-5" />
+                <img src="/icons/icon-a-plane.svg" alt="" className="w-6 h-6 rounded-lg" />
                 <span className="text-sm tracking-widest uppercase">MILES & POINTS</span>
               </div>
-              <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+              <h2 className="font-maru text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
                 マイルとポイ活で旅をお得に
               </h2>
             </div>
@@ -85,10 +85,23 @@ export default async function Home() {
 
       {/* CTA Section */}
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-10">
-        <div className="bg-gradient-to-br from-[#e0f2fe] via-[#f8fafc] to-[#ffe4e6] rounded-[2.5rem] p-8 sm:p-16 text-center shadow-md border border-sky-200/50 relative overflow-hidden">
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-slate-900 tracking-tight">ご質問・ご相談はお気軽に！</h3>
-            <p className="text-slate-700 mb-10 leading-relaxed text-sm sm:text-base font-medium">
+        {/* エアメール（航空便の封筒）風カード */}
+        <div
+          className="rounded-[2rem] p-2.5 shadow-md"
+          style={{
+            background:
+              "repeating-linear-gradient(45deg, #7dd3fc 0 14px, #ffffff 14px 28px, #fda4af 28px 42px, #ffffff 42px 56px)",
+          }}
+        >
+          <div className="bg-white rounded-[1.6rem] p-8 sm:p-14 text-center relative overflow-hidden">
+            {/* 切手風のアイコン */}
+            <div className="inline-block rotate-6 rounded-lg border-2 border-dashed border-sky-200 bg-sky-50 p-2 mb-6">
+              <img src="/icons/icon-a-plane.svg" alt="" className="w-10 h-10 rounded-md" />
+            </div>
+            <h3 className="font-maru text-2xl sm:text-3xl font-bold mb-6 text-slate-800 tracking-tight">
+              ご質問・ご相談はお気軽に！
+            </h3>
+            <p className="text-slate-600 mb-10 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
               ブログの内容に関するご感想や、マイルの貯め方、ホテル選びの相談など、
               何か気になることがあればいつでもメッセージをお送りください。
               一つひとつ丁寧にお返事させていただきます♪
@@ -100,9 +113,6 @@ export default async function Home() {
               お問い合わせはこちら
             </Link>
           </div>
-          {/* Decorative gradients - Higher contrast blue and pink */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#7dd3fc]/30 rounded-full blur-3xl -mr-48 -mt-48"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#fda4af]/30 rounded-full blur-3xl -ml-48 -mb-48"></div>
         </div>
       </section>
     </div>

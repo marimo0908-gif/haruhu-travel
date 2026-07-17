@@ -73,7 +73,7 @@ function ContactContent() {
                     <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6">
                         <CheckCircle2 className="w-10 h-10 text-green-500" />
                     </div>
-                    <h1 className="text-3xl font-bold text-slate-800 mb-4">送信が完了しました</h1>
+                    <h1 className="font-maru text-3xl font-bold text-slate-800 mb-4">送信が完了しました</h1>
                     <p className="text-slate-600 mb-8 leading-relaxed">
                         お問い合わせありがとうございます。内容を確認次第、入力いただいたメールアドレスへご連絡いたしますので、少々お待ちください。
                     </p>
@@ -86,7 +86,10 @@ function ContactContent() {
     return (
         <div className="container mx-auto px-6 py-12 max-w-4xl">
             <header className="text-center mb-16">
-                <h1 className="text-4xl font-bold text-slate-900 mb-4">お問い合わせ</h1>
+                <div className="inline-block rotate-6 rounded-lg border-2 border-dashed border-sky-200 bg-sky-50 p-2 mb-6">
+                    <img src="/icons/icon-a-plane.svg" alt="" className="w-10 h-10 rounded-md" />
+                </div>
+                <h1 className="font-maru text-4xl font-bold text-slate-800 mb-4">お問い合わせ</h1>
                 <p className="text-slate-600 max-w-xl mx-auto">
                     アメックス紹介のご依頼や、ブログに関するご質問・ご感想など、お気軽にお問い合わせください。
                 </p>
@@ -113,7 +116,14 @@ function ContactContent() {
                 </div>
 
                 <div className="md:col-span-2">
-                    <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 space-y-6">
+                    <div
+                        className="rounded-[2rem] p-2.5 shadow-md"
+                        style={{
+                            background:
+                                "repeating-linear-gradient(45deg, #7dd3fc 0 14px, #ffffff 14px 28px, #fda4af 28px 42px, #ffffff 42px 56px)",
+                        }}
+                    >
+                    <form onSubmit={handleSubmit} className="bg-white rounded-[1.6rem] p-8 space-y-6">
                         <div className="bg-blue-50/50 border border-blue-100/50 p-4 rounded-2xl flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5" />
                             <p className="text-sm text-slate-600">
@@ -211,6 +221,7 @@ function ContactContent() {
                             <Send className="ml-2 w-5 h-5" />
                         </Button>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>

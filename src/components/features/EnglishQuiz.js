@@ -92,6 +92,141 @@ const QUIZ_DATA = [
       { text: "Everything was great, thank you.", isCorrect: true, feedback: "Excellent! 自然でスマートな会話表現です。\"It was really good.\" などもよく使われます。" },
       { text: "Good food.", isCorrect: false, feedback: "言葉足らずな印象を与えてしまうかもしれません。" },
     ],
+  },
+  {
+    id: 11,
+    scenario: "ホテルのフロントで「Wi-Fiのパスワードを教えてもらえますか？」と聞きたい。",
+    choices: [
+      { text: "What is the Wi-Fi password?", isCorrect: false, feedback: "通じますが、少し唐突な印象です。クッション言葉を添えるとより丁寧になります。" },
+      { text: "Could I have the Wi-Fi password, please?", isCorrect: true, feedback: "Perfect! \"Could I have ~?\" は何かを教えてもらう・受け取るときの万能フレーズです。" },
+      { text: "Teach me Wi-Fi password.", isCorrect: false, feedback: "\"teach\" は勉強を教えるときの単語なので、情報を尋ねる場面では不自然です。" },
+    ],
+  },
+  {
+    id: 12,
+    scenario: "レストランで注文の前に「子供用の椅子はありますか？」と聞きたい。",
+    choices: [
+      { text: "Do you have a high chair?", isCorrect: true, feedback: "Great! 子供用の椅子は \"high chair\" と言います。子連れ旅行では必須フレーズです。" },
+      { text: "Is there a chair for child?", isCorrect: false, feedback: "意味は伝わりますが、\"high chair\" という決まった単語を使うのが自然です。" },
+      { text: "Baby chair, please.", isCorrect: false, feedback: "通じることもありますが、\"baby chair\" は和製英語に近い表現です。" },
+    ],
+  },
+  {
+    id: 13,
+    scenario: "子供に卵アレルギーがあります。レストランで「この料理に卵は入っていますか？」と確認したい。",
+    choices: [
+      { text: "Does this dish contain eggs?", isCorrect: true, feedback: "Excellent! \"contain\" を使ったアレルギー確認の定番フレーズです。\"My child is allergic to eggs.\" も一緒に覚えましょう。" },
+      { text: "Egg in this?", isCorrect: false, feedback: "緊急時なら通じますが、大事なアレルギー確認こそ正確なフレーズで伝えましょう。" },
+      { text: "I don't like eggs.", isCorrect: false, feedback: "「卵が好きではない」という好みの話になってしまい、アレルギーの深刻さが伝わりません。" },
+    ],
+  },
+  {
+    id: 14,
+    scenario: "お店で気に入った服を見つけました。「試着してもいいですか？」と聞きたい。",
+    choices: [
+      { text: "Can I try this on?", isCorrect: true, feedback: "Perfect! \"try on\" が「試着する」の定番表現です。\"Where is the fitting room?\"（試着室はどこですか）も便利です。" },
+      { text: "Can I wear this?", isCorrect: false, feedback: "「これを着てもいい？」という許可の意味になり、試着のニュアンスが伝わりにくいです。" },
+      { text: "I test this clothes.", isCorrect: false, feedback: "\"test\" は機械などを試すときの単語なので、服には使いません。" },
+    ],
+  },
+  {
+    id: 15,
+    scenario: "ホテルをチェックアウトする日。「チェックアウトの時間を少し遅らせてもらえますか？」とお願いしたい。",
+    choices: [
+      { text: "Could I have a late check-out?", isCorrect: true, feedback: "Excellent! \"late check-out\" という言葉がそのまま使えます。マリオットなどの上級会員特典でもよく聞く単語です。" },
+      { text: "I want to stay more time.", isCorrect: false, feedback: "「もっと居たい」という気持ちは伝わりますが、何をしてほしいかが曖昧です。" },
+      { text: "Please make check-out late.", isCorrect: false, feedback: "文法的に不自然で、命令調に聞こえてしまいます。" },
+    ],
+  },
+  {
+    id: 16,
+    scenario: "相手の英語が速くて聞き取れませんでした。「もう一度ゆっくり言っていただけますか？」とお願いしたい。",
+    choices: [
+      { text: "What?", isCorrect: false, feedback: "「は？」というかなりぶっきらぼうな響きになってしまいます。" },
+      { text: "Could you say that again more slowly?", isCorrect: true, feedback: "Perfect! 聞き返しの丁寧な定番フレーズ。\"Sorry?\" と軽く聞き返すのも自然です。" },
+      { text: "One more, please.", isCorrect: false, feedback: "「おかわりください」のような響きで、聞き返しには不自然です。" },
+    ],
+  },
+  {
+    id: 17,
+    scenario: "ドラッグストアで「子供用の酔い止めはありますか？」と聞きたい。",
+    choices: [
+      { text: "Do you have motion sickness medicine for kids?", isCorrect: true, feedback: "Excellent! 乗り物酔いは \"motion sickness\" と言います。\"for kids\" を付ければ子供用が伝わります。" },
+      { text: "Medicine for car, please.", isCorrect: false, feedback: "「車のための薬」となってしまい、意味が伝わりません。" },
+      { text: "My child is sick. Medicine?", isCorrect: false, feedback: "緊急なら通じますが、「病気」と伝わって大ごとになる可能性があります。" },
+    ],
+  },
+  {
+    id: 18,
+    scenario: "レストランで「お水をいただけますか？」と頼みたい。（無料のお水がほしい）",
+    choices: [
+      { text: "Water.", isCorrect: false, feedback: "一言だけだとかなりぶっきらぼうです。ミネラルウォーター（有料）が出てくることも。" },
+      { text: "Could I have some tap water, please?", isCorrect: true, feedback: "Perfect! 無料のお水がほしいときは \"tap water\"（水道水）と伝えるのがポイント。海外では \"water\" だけだと有料のボトルが出てくることがあります。" },
+      { text: "Give me free water.", isCorrect: false, feedback: "\"Give me\" は命令調で、\"free\" を強調すると少し失礼な印象になります。" },
+    ],
+  },
+  {
+    id: 19,
+    scenario: "地下鉄の券売機の前で困っています。駅員さんに「空港までの切符の買い方を教えてもらえますか？」と聞きたい。",
+    choices: [
+      { text: "How can I buy a ticket to the airport?", isCorrect: true, feedback: "Great! \"How can I ~?\" はやり方を尋ねる万能フレーズです。冒頭に \"Excuse me,\" を付けるとさらに◎。" },
+      { text: "Ticket. Airport. How?", isCorrect: false, feedback: "単語の羅列でも伝わることはありますが、せっかくなら文で聞いてみましょう。" },
+      { text: "Where is airport ticket?", isCorrect: false, feedback: "「空港の切符はどこ？」という場所を尋ねる文になってしまいます。" },
+    ],
+  },
+  {
+    id: 20,
+    scenario: "ホテルの部屋のエアコンが動きません。フロントに電話して「部屋のエアコンが効かないようです」と伝えたい。",
+    choices: [
+      { text: "The air conditioner in my room doesn't seem to be working.", isCorrect: true, feedback: "Excellent! \"doesn't seem to be working\" と少し柔らかく伝えるのがスマートです。\"Could you send someone to check it?\" と続けましょう。" },
+      { text: "Air conditioner is broken! Fix it!", isCorrect: false, feedback: "「壊れてる！直せ！」とクレーム調になってしまいます。" },
+      { text: "My room is hot.", isCorrect: false, feedback: "「部屋が暑い」だけだと、何をしてほしいのかが伝わりません。" },
+    ],
+  },
+  {
+    id: 21,
+    scenario: "ショッピング中、店員さんに「見ているだけです」と伝えたい。",
+    choices: [
+      { text: "I'm just looking, thank you.", isCorrect: true, feedback: "Perfect! 店員さんの \"May I help you?\" への定番の返しです。\"thank you\" を添えると感じ良く断れます。" },
+      { text: "No, thank you.", isCorrect: false, feedback: "断ってはいますが、少し突き放した印象になることも。" },
+      { text: "I only see.", isCorrect: false, feedback: "直訳になっていて不自然です。\"look\"（見る）と \"see\"（見える）の違いに注意。" },
+    ],
+  },
+  {
+    id: 22,
+    scenario: "テーマパークで「このアトラクションは何分待ちですか？」とスタッフに聞きたい。",
+    choices: [
+      { text: "How long is the wait for this ride?", isCorrect: true, feedback: "Excellent! 待ち時間は \"the wait\"、アトラクションは \"ride\" と言うのがネイティブ流です。" },
+      { text: "What time is this attraction?", isCorrect: false, feedback: "「このアトラクションは何時ですか？」という開始時間を聞く文になってしまいます。" },
+      { text: "How many minutes wait?", isCorrect: false, feedback: "意味は伝わりますが、文法的に不自然です。" },
+    ],
+  },
+  {
+    id: 23,
+    scenario: "飛行機で隣の人に「席を替わっていただくことはできますか？家族と離れてしまって」とお願いしたい。",
+    choices: [
+      { text: "Would you mind switching seats with me? I'd like to sit with my family.", isCorrect: true, feedback: "Perfect! \"Would you mind ~ing?\" は相手に負担をかけるお願いの丁寧な形。理由を添えると快く応じてもらいやすいです。" },
+      { text: "Change seat, OK?", isCorrect: false, feedback: "かなりカジュアルすぎて、相手を戸惑わせてしまうかも。" },
+      { text: "You move there, please.", isCorrect: false, feedback: "「あなたがあそこに動いて」という指示になってしまい、失礼な印象です。" },
+    ],
+  },
+  {
+    id: 24,
+    scenario: "お土産屋さんで「これはいくらですか？」と値段を聞いたあと、「少し考えます」とやんわり伝えたい。",
+    choices: [
+      { text: "Let me think about it.", isCorrect: true, feedback: "Great! 「ちょっと考えさせてください」の定番フレーズ。買わない可能性を角を立てずに伝えられます。" },
+      { text: "Too expensive.", isCorrect: false, feedback: "「高すぎ」とストレートに言うと、お店の人に失礼な印象を与えます。" },
+      { text: "I think it.", isCorrect: false, feedback: "文法的に不完全で、意味が伝わりにくいです。\"think about it\" とセットで覚えましょう。" },
+    ],
+  },
+  {
+    id: 25,
+    scenario: "ホテルに忘れ物をしたかもしれません。電話で「昨日そちらに泊まった者ですが、部屋に充電器を忘れたようです」と伝えたい。",
+    choices: [
+      { text: "I stayed there last night, and I think I left my charger in the room.", isCorrect: true, feedback: "Excellent! \"I think I left ~\" は忘れ物の定番表現。部屋番号と名前を続けて伝えるとスムーズです。" },
+      { text: "My charger is in your hotel.", isCorrect: false, feedback: "「私の充電器はあなたのホテルにあります」という状況説明だけで、何をしてほしいかが伝わりません。" },
+      { text: "I forgot charger. Send me.", isCorrect: false, feedback: "\"forget\" は「持ってくるのを忘れた」、置き忘れは \"leave\" を使います。\"Send me\" も命令調です。" },
+    ],
   }
 ];
 
