@@ -1,93 +1,34 @@
-"use client";
-
 import Link from "next/link";
-import Image from "next/image";
-import { Twitter, Instagram, Youtube, Mail, ArrowRight, ShoppingBag } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-slate-50 border-t border-slate-100 pt-16 pb-8">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <footer className="bg-[#fffdfb] px-5 pb-14 pt-16 text-center">
+            <div
+                className="text-[26px] leading-[1.2] text-[#cabfbb] sm:text-[30px]"
+                style={{ fontFamily: "var(--font-parisienne), cursive" }}
+            >
+                Let&apos;s make{" "}
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="#eab6b1" className="inline-block align-[-2px]">
+                    <path d="M12 20s-7-4.5-9.3-8.2C1 8.9 2.4 5.5 5.6 5.5c1.9 0 3.2 1.1 4.4 2.6 1.2-1.5 2.5-2.6 4.4-2.6 3.2 0 4.6 3.4 2.9 6.3C19 15.5 12 20 12 20z" />
+                </svg>
+            </div>
+            <div
+                className="mt-0.5 text-[26px] leading-[1.2] text-[#cabfbb] sm:text-[30px]"
+                style={{ fontFamily: "var(--font-parisienne), cursive" }}
+            >
+                dream trips come true! <span className="text-[#eab6b1]">✈</span>
+            </div>
 
-                    {/* Brand Column */}
-                    <div className="space-y-4">
-                        <span className="font-maru text-xl font-bold tracking-tight text-foreground flex items-center gap-2.5">
-                            {/* The source PNG has large white padding, so crop it by scaling inside a fixed frame */}
-                            <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-slate-200 shadow-sm">
-                                <Image
-                                    src="/はるふーtravel.png"
-                                    alt="はるふートラベル"
-                                    width={48}
-                                    height={48}
-                                    className="absolute inset-0 h-full w-full object-contain scale-[1.7]"
-                                />
-                            </span>
-                            はるふートラベル
-                        </span>
-                        <p className="text-slate-500 text-sm leading-relaxed">
-                            賢い旅とお得術。
-                            <br />
-                            マイルとポイントで、家族の思い出をもっと豊かに。
-                        </p>
-                        <div className="pt-1">
-                            <a
-                                href="https://room.rakuten.co.jp/room_6f3e1c023f/items"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs font-medium text-primary hover:text-primary/80 flex items-center gap-1 transition-colors"
-                            >
-                                楽天ROOMはこちら <ArrowRight className="h-3 w-3" />
-                            </a>
-                        </div>
-                        <div className="flex space-x-4 pt-2">
-
-                            <a href="https://www.instagram.com/marimo_dog_/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors hover:scale-110 transform duration-200">
-                                <Instagram className="h-5 w-5" />
-                            </a>
-                            <a href="https://www.youtube.com/@haruhu-26271" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-500 transition-colors hover:scale-110 transform duration-200">
-                                <Youtube className="h-5 w-5" />
-                            </a>
-                            <a href="https://note.com/juicy_roses5378" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#2cb696] transition-colors hover:scale-110 transform duration-200" title="note">
-                                <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                                    <path d="M17.06 20.17h-2.14v-7.64c0-1.89-.54-2.84-1.62-2.84-.66 0-1.22.36-1.67 1.07v9.41H9.49V3.83h2.14v3.13c.64-1.12 1.48-1.68 2.53-1.68 2.12 0 3.18 1.44 3.18 4.31v10.58z"/>
-                                </svg>
-                            </a>
-                            <a href="https://room.rakuten.co.jp/room_6f3e1c023f/items" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#bf0000] transition-colors hover:scale-110 transform duration-200" title="楽天ROOM">
-                                <ShoppingBag className="h-5 w-5" />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Links Column */}
-                    <div>
-                        <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase mb-4">はじめての方へ</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link href="/campaigns" className="text-slate-500 hover:text-primary text-sm transition-colors">
-                                    最新キャンペーン
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/contact" className="text-slate-500 hover:text-primary text-sm transition-colors">
-                                    お問い合わせ
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-
-                </div>
-
-                <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-xs text-slate-400">
-                        &copy; {new Date().getFullYear()} はるふートラベル. All rights reserved.
-                    </p>
-                    <div className="flex space-x-6 text-xs text-slate-400">
-                        <Link href="/privacy" className="hover:text-foreground">プライバシーポリシー</Link>
-                        <Link href="/terms" className="hover:text-foreground">利用規約</Link>
-                    </div>
-                </div>
+            <div className="mx-auto mt-11 flex max-w-[1120px] flex-col items-center justify-between gap-4 border-t border-[#f0e7e3] px-4 pt-5 sm:flex-row sm:px-10">
+                <span className="text-[12.5px] text-[#b0a8a5]">© 2026 はるふートラベル. All rights reserved.</span>
+                <span className="flex gap-6 text-[12.5px]">
+                    <Link href="/privacy" className="text-[#9a9290] hover:text-[#4a4644]">
+                        プライバシーポリシー
+                    </Link>
+                    <Link href="/terms" className="text-[#9a9290] hover:text-[#4a4644]">
+                        利用規約
+                    </Link>
+                </span>
             </div>
         </footer>
     );

@@ -334,7 +334,7 @@ export default function EnglishQuiz() {
         </div>
         <button 
           onClick={startNewGame}
-          className="w-full bg-primary hover:bg-sky-500 text-white font-bold text-lg py-4 rounded-xl transition-all active:scale-95 shadow-md hover:shadow-lg"
+          className="w-full bg-primary hover:bg-[#d3625c] text-white font-bold text-lg py-4 rounded-xl transition-all active:scale-95 shadow-md hover:shadow-lg"
         >
           もう一度プレイする（違う問題が出ます）
         </button>
@@ -345,7 +345,7 @@ export default function EnglishQuiz() {
   return (
     <div className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-3xl p-6 md:p-8 max-w-2xl mx-auto shadow-xl text-slate-800">
       <div className="flex justify-between items-center mb-6">
-        <span className="bg-sky-50 text-primary px-4 py-1.5 rounded-full text-sm font-bold tracking-wide border border-sky-100 shadow-sm">
+        <span className="bg-[#fdf3f1] text-primary px-4 py-1.5 rounded-full text-sm font-bold tracking-wide border border-[#f0d9d6] shadow-sm">
           Q {currentQuestionIndex + 1} / {QUESTIONS_PER_GAME}
         </span>
         <span className="text-sm text-slate-500 font-medium flex items-center gap-1">
@@ -367,7 +367,7 @@ export default function EnglishQuiz() {
           let buttonClass = "w-full text-left p-4 rounded-xl border-2 transition-all font-medium text-lg shadow-sm group ";
           
           if (!isAnswered) {
-            buttonClass += "border-slate-200 bg-white hover:border-primary hover:bg-sky-50 hover:text-sky-800 hover:shadow-md active:scale-95 text-slate-700";
+            buttonClass += "border-slate-200 bg-white hover:border-primary hover:bg-[#fdf3f1] hover:text-[#d3625c] hover:shadow-md active:scale-95 text-slate-700";
           } else {
             if (choice === selectedChoice) {
               buttonClass += choice.isCorrect 
@@ -413,7 +413,7 @@ export default function EnglishQuiz() {
           <div className="mt-6 flex justify-between items-center gap-4">
             <button
               onClick={() => speakText(currentQuestion.choices.find(c => c.isCorrect).text)}
-              className="flex items-center gap-2 text-primary hover:text-sky-700 font-semibold py-2 px-4 rounded-lg hover:bg-sky-50 transition-colors"
+              className="flex items-center gap-2 text-primary hover:text-[#d3625c] font-semibold py-2 px-4 rounded-lg hover:bg-[#fdf3f1] transition-colors"
             >
               正解を聞く
             </button>

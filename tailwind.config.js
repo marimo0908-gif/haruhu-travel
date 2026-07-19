@@ -9,20 +9,20 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#38bdf8', // Sky 400 - Bright & Cheerful
-          foreground: '#f0f9ff',
+          DEFAULT: '#e88b86', // Coral - はるふートラベルのメインカラー
+          foreground: '#fffdfb',
         },
         secondary: {
-          DEFAULT: '#4ade80', // Green 400 - Fresh & Safe
-          foreground: '#f0fdf4',
+          DEFAULT: '#7cc0c0', // Teal - AI活用など
+          foreground: '#ffffff',
         },
         accent: {
-          DEFAULT: '#fb7185', // Rose 400 - Warm & Attention-grabbing (Coral-ish)
-          foreground: '#fff1f2',
+          DEFAULT: '#e57a74', // 濃いコーラル - 強調・リンク
+          foreground: '#fffdfb',
         },
-        background: "#fdfdfd", // Almost white, very clean
-        foreground: "#334155", // Slate 700 - Softer than black, easy to read
-        muted: "#94a3b8",
+        background: "#fffdfb", // やわらかいクリーム
+        foreground: "#4a4644", // 落ち着いた茶グレー（見出し・本文）
+        muted: "#8a8382",
         card: "#ffffff",
       },
       fontFamily: {

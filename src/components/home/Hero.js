@@ -2,52 +2,80 @@ import Link from "next/link";
 
 export default function Hero() {
     return (
-        <div className="relative isolate overflow-hidden bg-white">
-            {/* やわらかい背景（空色→白） */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sky-50 via-rose-100/40 to-white" aria-hidden="true" />
-
-            {/* 点線の飛行ルート＋紙飛行機（サイトのシグネチャー） */}
-            <svg
-                className="absolute inset-x-0 top-8 -z-10 mx-auto w-full max-w-5xl text-sky-200"
-                viewBox="0 0 1000 220"
-                fill="none"
-                aria-hidden="true"
-            >
-                <path
-                    d="M-20 190 C 200 80, 420 200, 620 110 S 920 40, 1030 70"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeDasharray="1 14"
-                    strokeLinecap="round"
-                />
-                <circle cx="850" cy="62" r="34" fill="#fde68a" opacity="0.55" />
-            </svg>
-
-            <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 sm:pb-32 lg:px-8 lg:py-32">
-                <div className="mx-auto max-w-3xl text-center">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-bold text-primary shadow-sm ring-1 ring-sky-100">
-                        <img src="/icons/icon-a-plane.svg" alt="" className="h-5 w-5 rounded-md" />
-                        ママのための賢い旅の始め方
-                    </span>
-
-                    <h1 className="font-maru mt-8 text-4xl font-bold tracking-tight text-slate-800 sm:text-6xl">
-                        もっと<span className="text-primary">自由</span>に旅しよう
-                    </h1>
-                    <p className="mt-6 text-lg leading-8 text-slate-600">
-                        「忙しいから無理」「お金がかかるから我慢」はもう卒業。<br />
-                        マイルとポイ活を上手に使えば、旅はもっと身近になります。<br />
-                        思い出作りを、今すぐ始めましょう。
-                    </p>
-                    <div className="mt-10 flex items-center justify-center gap-x-6">
-                        <Link
-                            href="/start"
-                            className="rounded-full bg-primary px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-sky-200 hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all hover:scale-105"
+        <section className="reveal mx-auto grid max-w-[1120px] grid-cols-1 items-center gap-10 px-6 pb-6 pt-6 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pt-10">
+            {/* 左：テキスト */}
+            <div className="flex flex-col items-start text-left">
+                <span className="inline-block rounded-full bg-[#e79b96] px-[18px] py-2 text-[13px] font-medium text-white">
+                    ママ × 子連れ旅行 × AI で未来を変える
+                </span>
+                <h1 className="font-maru mt-6 text-[34px] font-black leading-[1.28] text-[#4a4644] sm:text-[42px] lg:text-[50px]">
+                    <span className="text-[#e57a74]">「いつか行きたい」</span>を<br />
+                    「
+                    <span className="relative inline-block">
+                        行けた
+                        <svg
+                            viewBox="0 0 120 34"
+                            preserveAspectRatio="none"
+                            aria-hidden="true"
+                            className="absolute -left-[6%] -bottom-3 -z-10 h-[26px] w-[114%] overflow-visible"
                         >
-                            お得な旅の始め方
-                        </Link>
-                    </div>
+                            <path
+                                d="M2 27 C22 22 46 19 72 12 C92 6.5 107 4 119 1 C117 8 110 11.5 96 16 C73 23 47 27 25 31.5 C15 33.5 6 33 2 27 Z"
+                                fill="#f4d24e"
+                                opacity="0.92"
+                            />
+                        </svg>
+                    </span>
+                    」に変える
+                </h1>
+                <p className="mt-7 text-[15px] leading-[2] text-[#6a6462] sm:text-base">
+                    マイルとの出会いで、家族旅行の夢がぐっと近づいた。<br />
+                    AIを味方につけて、<br />
+                    場所や時間に縛られない生き方を模索しています。
+                </p>
+                <div className="mt-8 flex flex-wrap gap-4">
+                    <Link
+                        href="/blog"
+                        className="hbtn inline-flex items-center gap-2.5 rounded-full bg-[#e88b86] px-7 py-4 text-[15px] font-medium text-white shadow-[0_8px_20px_rgba(232,139,134,0.35)]"
+                    >
+                        ✈ ブログを読む
+                    </Link>
+                    <Link
+                        href="/start"
+                        className="hbtn inline-flex items-center gap-2.5 rounded-full border-[1.5px] border-[#f0d9d6] bg-white px-7 py-4 text-[15px] font-medium text-[#6a6462]"
+                    >
+                        ♡ 自己紹介はこちら
+                    </Link>
                 </div>
             </div>
-        </div>
+
+            {/* 右：写真（輪郭がゆっくり動く） */}
+            <div className="hero-img-wrap relative aspect-[7/5] w-full max-w-[520px] justify-self-center lg:max-w-none">
+                <div
+                    className="hero-blob-bg absolute -inset-y-[6%] -left-[8%] -right-[4%] opacity-60"
+                    style={{ background: "linear-gradient(140deg, #f7d9d4, #cfe9e2)" }}
+                    aria-hidden="true"
+                />
+                {/* 装飾：ハート */}
+                <div className="absolute -top-4 left-[8%] h-6 w-6 -rotate-[8deg] text-[#f0b8b2]" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.9 20.4c-.4-.3-4.2-3.3-6.1-5.9-1.3-1.8-1.9-3.4-1.4-5 .6-2 2.7-2.9 4.5-2.3 1.1.4 1.9 1.2 2.4 2.2.1.2.3.3.4.1.6-1 1.5-1.8 2.7-2.1 1.9-.5 3.9.6 4.3 2.6.3 1.6-.4 3.1-1.6 4.8-1.7 2.3-4.9 4.9-5.3 5.2-.1.1-.3.1-.4.1z" />
+                    </svg>
+                </div>
+                {/* 装飾：星 */}
+                <div className="absolute bottom-[6%] -right-3.5 h-[22px] w-[22px] text-[#8ec9c3]" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l2.2 6.6H21l-5.4 4 2.1 6.6L12 15.4 6.3 19.2l2.1-6.6L3 8.6h6.8z" />
+                    </svg>
+                </div>
+                <div className="hero-blob absolute inset-0 overflow-hidden shadow-[0_22px_50px_rgba(210,140,135,0.28)]">
+                    <img
+                        src="/handoff/hero_photo.png"
+                        alt="ハワイ・アウラニのリゾート風景"
+                        className="block h-full w-full object-cover"
+                    />
+                </div>
+            </div>
+        </section>
     );
 }

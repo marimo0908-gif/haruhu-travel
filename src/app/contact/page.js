@@ -86,7 +86,7 @@ function ContactContent() {
     return (
         <div className="container mx-auto px-6 py-12 max-w-4xl">
             <header className="text-center mb-16">
-                <div className="inline-block rotate-6 rounded-lg border-2 border-dashed border-sky-200 bg-sky-50 p-2 mb-6">
+                <div className="inline-block rotate-6 rounded-lg border-2 border-dashed border-[#f0d9d6] bg-[#fdf3f1] p-2 mb-6">
                     <img src="/icons/icon-a-plane.svg" alt="" className="w-10 h-10 rounded-md" />
                 </div>
                 <h1 className="font-maru text-4xl font-bold text-slate-800 mb-4">お問い合わせ</h1>
@@ -120,12 +120,12 @@ function ContactContent() {
                         className="rounded-[2rem] p-2.5 shadow-md"
                         style={{
                             background:
-                                "repeating-linear-gradient(45deg, #7dd3fc 0 14px, #ffffff 14px 28px, #fda4af 28px 42px, #ffffff 42px 56px)",
+                                "repeating-linear-gradient(45deg, #ecb0aa 0 14px, #ffffff 14px 28px, #e5c98a 28px 42px, #ffffff 42px 56px)",
                         }}
                     >
                     <form onSubmit={handleSubmit} className="bg-white rounded-[1.6rem] p-8 space-y-6">
-                        <div className="bg-blue-50/50 border border-blue-100/50 p-4 rounded-2xl flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5" />
+                        <div className="bg-[#fdf3f1] border border-[#f0d9d6] p-4 rounded-2xl flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
                             <p className="text-sm text-slate-600">
                                 メールアドレスに誤りがあると、お返事がお届けできません。入力内容にお間違いがないか、今一度ご確認ください。
                             </p>

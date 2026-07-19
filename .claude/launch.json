@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "haruhu-travel",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "cwd": "/Users/aiharanoriko/note/haruhu-travel"
+    },
+    {
+      "name": "cf-pages-local",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["wrangler", "pages", "dev", "--port", "8788"],
+      "port": 8788,
+      "cwd": "/Users/aiharanoriko/note/haruhu-travel"
+    }
+  ]
+}

@@ -2,108 +2,111 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Plane } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navigation = [
-    { name: "ホーム", href: "/", icon: "/icons/icon-b-h-logo.svg", note: "トップページへ" },
-    { name: "宿泊レビュー", href: "/blog?category=宿泊レビュー", icon: "/icons/icon-c-suitcase.svg", note: "実際に泊まったホテルの体験記" },
-    { name: "マイル・ポイ活", href: "/blog?category=マイル・ポイ活", icon: "/icons/icon-a-plane.svg", note: "旅をお得にするコツ" },
+    { name: "About", href: "/#about" },
+    { name: "マイル / 旅行", href: "/#pillars" },
+    { name: "AI活用", href: "/#pillars" },
+    { name: "自由なライフスタイル", href: "/#pillars" },
+    { name: "ブログ", href: "/blog" },
+    { name: "SNS", href: "/#platforms" },
 ];
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-background/80 backdrop-blur-md">
-            <nav className="mx-auto flex max-w-7xl items-center justify-center p-4 lg:px-8" aria-label="Global">
-                {/* Mobile menu button */}
-                <div className="flex lg:hidden absolute left-4">
-                    <button
-                        type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        onClick={() => setMobileMenuOpen(true)}
-                    >
-                        <span className="sr-only">メニューを開く</span>
-                        <Menu className="h-6 w-6" aria-hidden="true" />
-                    </button>
-                </div>
-
-                {/* Logo - centered on mobile, left on desktop */}
-                <div className="flex items-center lg:absolute lg:left-8">
-                    <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2.5 group">
-                        {/* Logo mark: the source PNG has large white padding, so crop it by scaling inside a fixed frame */}
-                        <span className="relative block h-11 w-11 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full">
-                            <img
-                                src="/haruhu-travel-logo.png"
-                                alt=""
-                                className="absolute inset-0 h-full w-full object-contain scale-[1.7] group-hover:rotate-6 transition-transform duration-300"
-                            />
-                        </span>
-                        <span className="font-maru text-lg sm:text-2xl font-bold tracking-tight text-slate-800 group-hover:text-primary transition-colors">
+        <header className="sticky top-0 z-50 w-full">
+            <div className="w-full border-b border-[#f2e6e3] bg-[#fffdfb]/85 backdrop-blur-md">
+            <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-5 py-3.5 sm:px-10">
+                {/* ロゴ */}
+                <Link href="/" className="flex items-center gap-3">
+                    <img
+                        src="/はるふーtravel.png"
+                        alt="はるふートラベル"
+                        className="h-12 w-auto sm:h-[56px]"
+                        style={{ mixBlendMode: "multiply" }}
+                    />
+                    <span className="leading-tight">
+                        <span className="font-maru block text-lg font-bold tracking-wide text-[#4a4644] sm:text-2xl">
                             はるふートラベル
                         </span>
-                    </Link>
-                </div>
-
-                {/* Desktop navigation - centered */}
-                <div className="hidden lg:flex lg:gap-x-2">
-                    {navigation.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="group font-maru relative rounded-full px-4 py-2 text-sm font-bold leading-6 text-slate-600 transition-colors hover:bg-sky-50 hover:text-primary"
+                        <span
+                            className="-mt-0.5 block text-base font-bold tracking-wide text-[#e79b96]"
+                            style={{ fontFamily: "var(--font-caveat), cursive" }}
                         >
+                            Haruhu Travel
+                        </span>
+                    </span>
+                </Link>
+
+                {/* PCナビ */}
+                <nav className="hidden items-center gap-7 text-sm font-medium text-[#6a6462] lg:flex">
+                    {navigation.map((item) => (
+                        <Link key={item.name} href={item.href} className="transition-colors hover:text-[#e57a74]">
                             {item.name}
-                            <span
-                                aria-hidden="true"
-                                className="absolute inset-x-4 -bottom-0.5 border-b-2 border-dotted border-sky-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                            />
                         </Link>
                     ))}
-                </div>
+                </nav>
 
+                {/* CTAボタン（PC） */}
+                <Link
+                    href="/blog"
+                    className="hbtn hidden items-center gap-2 rounded-full bg-[#e88b86] px-5 py-3 text-[13px] font-medium text-white shadow-[0_6px_16px_rgba(232,139,134,0.35)] lg:inline-flex"
+                >
+                    ✈ いつか行きたいを叶える
+                </Link>
 
-            </nav>
+                {/* モバイル：メニューボタン */}
+                <button
+                    type="button"
+                    className="-m-2 inline-flex items-center justify-center p-2 text-[#6a6462] lg:hidden"
+                    onClick={() => setMobileMenuOpen(true)}
+                >
+                    <span className="sr-only">メニューを開く</span>
+                    <Menu className="h-6 w-6" aria-hidden="true" />
+                </button>
+            </div>
+            </div>
 
-            {/* Mobile Menu Overlay */}
+            {/* モバイルメニュー */}
             {mobileMenuOpen && (
-                <div className="lg:hidden fixed inset-0 z-50 bg-gradient-to-b from-sky-50 via-white to-rose-50 p-5">
-                    <div className="flex items-center justify-between mb-10">
-                        <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2.5" onClick={() => setMobileMenuOpen(false)}>
-                            <span className="relative block h-11 w-11 shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-slate-200">
-                                <img src="/haruhu-travel-logo.png" alt="" className="absolute inset-0 h-full w-full object-contain scale-[1.7]" />
-                            </span>
-                            <span className="font-maru text-lg font-bold tracking-tight text-slate-800">はるふートラベル</span>
+                <div className="fixed inset-0 z-50 bg-[#fffdfb] p-5 lg:hidden">
+                    <div className="mb-10 flex items-center justify-between">
+                        <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileMenuOpen(false)}>
+                            <img src="/はるふーtravel.png" alt="" className="h-11 w-auto" style={{ mixBlendMode: "multiply" }} />
+                            <span className="font-maru text-lg font-bold text-[#4a4644]">はるふートラベル</span>
                         </Link>
                         <button
                             type="button"
-                            className="rounded-full bg-white p-2.5 text-slate-600 shadow-sm ring-1 ring-slate-100"
+                            className="rounded-full bg-white p-2.5 text-[#6a6462] shadow-sm ring-1 ring-[#f2e6e3]"
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             <span className="sr-only">メニューを閉じる</span>
                             <X className="h-6 w-6" aria-hidden="true" />
                         </button>
                     </div>
-                    <nav className="flex flex-col gap-4">
+                    <nav className="flex flex-col gap-3">
                         {navigation.map((item) => (
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="flex items-center gap-4 rounded-3xl bg-white p-4 shadow-sm ring-1 ring-sky-100 active:scale-[0.98] transition-transform"
+                                className="flex items-center justify-between rounded-2xl bg-white px-5 py-4 text-[15px] font-medium text-[#4a4644] shadow-sm ring-1 ring-[#f2e6e3] transition-transform active:scale-[0.98]"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                <img src={item.icon} alt="" className="h-12 w-12 rounded-2xl" />
-                                <span>
-                                    <span className="font-maru block text-lg font-bold text-slate-800">{item.name}</span>
-                                    <span className="block text-xs text-slate-500 mt-0.5">{item.note}</span>
-                                </span>
-                                <span className="ml-auto text-sky-300" aria-hidden="true">→</span>
+                                {item.name}
+                                <span className="text-[#e79b96]" aria-hidden="true">→</span>
                             </Link>
                         ))}
                     </nav>
-                    <p className="mt-10 text-center text-xs text-slate-400">
-                        マイルとポイントで、家族の思い出をもっと豊かに
-                    </p>
+                    <Link
+                        href="/blog"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="mt-6 flex items-center justify-center gap-2 rounded-full bg-[#e88b86] px-5 py-4 text-[15px] font-medium text-white shadow-[0_6px_16px_rgba(232,139,134,0.35)]"
+                    >
+                        ✈ いつか行きたいを叶える
+                    </Link>
                 </div>
             )}
         </header>

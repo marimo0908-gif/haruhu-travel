@@ -79,7 +79,7 @@ export default function Sidebar({ categories = [], posts = [] }) {
                 className="rounded-2xl p-2 shadow-md"
                 style={{
                     background:
-                        "repeating-linear-gradient(45deg, #7dd3fc 0 10px, #ffffff 10px 20px, #fda4af 20px 30px, #ffffff 30px 40px)",
+                        "repeating-linear-gradient(45deg, #ecb0aa 0 10px, #ffffff 10px 20px, #e5c98a 20px 30px, #ffffff 30px 40px)",
                 }}
             >
                 <div className="bg-white rounded-xl p-5">
@@ -92,7 +92,7 @@ export default function Sidebar({ categories = [], posts = [] }) {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-block w-full text-center bg-primary text-white py-2.5 rounded-full text-sm font-bold hover:bg-primary/90 transition-all transform active:scale-95 shadow-md shadow-sky-200"
+                        className="inline-block w-full text-center bg-primary text-white py-2.5 rounded-full text-sm font-bold hover:bg-primary/90 transition-all transform active:scale-95 shadow-md shadow-[#f0d9d6]"
                     >
                         メッセージを送る
                     </Link>
