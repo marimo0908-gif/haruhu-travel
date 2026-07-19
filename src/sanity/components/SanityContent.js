@@ -43,10 +43,10 @@ const components = {
     },
     block: {
         h2: ({ children }) => (
-            <h2 className="mt-10 mb-8 text-2xl font-bold text-slate-900">{children}</h2>
+            <h2 className="font-maru mt-10 mb-8 text-2xl font-bold text-slate-800">{children}</h2>
         ),
         h3: ({ children }) => (
-            <h3 className="mt-8 mb-4 text-xl font-bold text-slate-900">{children}</h3>
+            <h3 className="font-maru mt-8 mb-4 text-xl font-bold text-slate-800">{children}</h3>
         ),
         normal: ({ children }) => <p className="mb-6 leading-relaxed text-slate-700">{children}</p>,
         callout: ({ children }) => (

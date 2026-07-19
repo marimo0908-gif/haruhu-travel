@@ -41,7 +41,7 @@ export default async function BlogPage({ searchParams }) {
                     {/* Main Content Area */}
                     <div className="flex-1">
                         <div className="mb-12">
-                            <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl mb-4 border-l-4 border-primary pl-4">
+                            <h2 className="font-maru text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl mb-4 border-l-4 border-primary pl-4">
                                 {selectedCategory ? `${selectedCategory}の記事一覧` : "記事一覧"}
                             </h2>
                             <p className="text-lg text-slate-600">

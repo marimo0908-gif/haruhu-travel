@@ -107,7 +107,7 @@ export default async function BlogPostPage({ params }) {
                                                 {date}
                                             </span>
                                         </div>
-                                        <h1 className="text-xl sm:text-3xl lg:text-4xl font-black text-white leading-tight drop-shadow-2xl tracking-tight">
+                                        <h1 className="font-maru text-xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight drop-shadow-2xl tracking-tight">
                                             {title}
                                         </h1>
                                     </div>
@@ -119,7 +119,7 @@ export default async function BlogPostPage({ params }) {
                             )}
                         </div>
 
-                        <div className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:border-l-4 prose-h2:border-primary prose-h2:pl-4 prose-p:leading-relaxed mb-12">
+                        <div className="prose prose-slate prose-lg max-w-none prose-headings:font-maru prose-headings:font-bold prose-h2:text-2xl prose-h2:border-l-4 prose-h2:border-primary prose-h2:pl-4 prose-p:leading-relaxed mb-12">
                             <SanityContent value={post.body} />
                         </div>
 

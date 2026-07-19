@@ -5,7 +5,7 @@ export default function Sidebar({ categories = [], posts = [] }) {
         <aside className="w-full lg:sticky lg:top-24 space-y-8">
             {/* Category Section */}
             <div>
-                <h3 className="text-lg font-bold text-slate-900 border-b-2 border-primary w-fit pb-1 mb-6">
+                <h3 className="font-maru text-lg font-bold text-slate-800 border-b-2 border-primary w-fit pb-1 mb-6">
                     カテゴリー
                 </h3>
                 <ul className="space-y-4">
