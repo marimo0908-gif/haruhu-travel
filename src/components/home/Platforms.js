@@ -53,7 +53,7 @@ const platforms = [
     {
         name: "楽天ROOM",
         id: "おすすめアイテム",
-        href: "https://room.rakuten.co.jp/",
+        href: "https://room.rakuten.co.jp/room_6f3e1c023f/items",
         bg: "#bf0000",
         roomText: "ROOM",
     },
