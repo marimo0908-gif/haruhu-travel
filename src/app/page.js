@@ -26,7 +26,7 @@ export default async function Home() {
 
   return (
     <div
-      className="relative overflow-x-hidden pb-8"
+      className="relative z-0 overflow-x-hidden pb-8"
       style={{ background: "#fffdfb", color: "#55514f" }}
     >
       <WaveBackground />
