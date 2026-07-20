@@ -87,13 +87,13 @@ export default function AffiliateLink({
 
             {(campaignImage || title === 'ファンくる') && (
                 <div className="border-t border-primary/10 w-full overflow-hidden bg-slate-50 flex justify-center py-4 px-6">
-                    <img 
-                        src={title === 'ファンくる' 
-                            ? '/images/fancrew-campaign-trimmed.png' 
+                    <img
+                        src={title === 'ファンくる'
+                            ? '/images/fancrew-campaign-trimmed.png'
                             : (typeof campaignImage === 'string' ? campaignImage : campaignImage.url)
-                        } 
-                        alt={title} 
-                        className={title === 'ファンくる' ? "max-h-20 w-auto object-contain" : "max-w-full h-auto"}
+                        }
+                        alt={title}
+                        className="max-w-full sm:max-w-md h-auto rounded-lg"
                     />
                 </div>
             )}
