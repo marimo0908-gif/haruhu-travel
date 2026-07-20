@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PlaneIcon from "@/components/home/PlaneIcon";
 
 export default function Footer() {
     return (
@@ -37,7 +38,7 @@ export default function Footer() {
                 className="mt-0.5 text-[26px] leading-[1.2] text-[#cabfbb] sm:text-[30px]"
                 style={{ fontFamily: "var(--font-parisienne), cursive" }}
             >
-                dream trips come true! <span className="text-[#eab6b1]">✈</span>
+                dream trips come true! <PlaneIcon className="inline-block h-[17px] w-[17px] align-[-2px] text-[#eab6b1]" />
             </div>
 
             <div className="mx-auto mt-11 flex max-w-[1120px] flex-col items-center justify-between gap-4 border-t border-[#f0e7e3] px-4 pt-5 sm:flex-row sm:px-10">

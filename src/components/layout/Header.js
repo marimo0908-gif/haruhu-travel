@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import PlaneIcon from "@/components/home/PlaneIcon";
 
 const navigation = [
     { name: "About", href: "/#about" },
@@ -51,7 +52,7 @@ export default function Header() {
                     href="/blog"
                     className="hbtn hidden items-center gap-2 rounded-full bg-[#e88b86] px-5 py-3 text-[13px] font-medium text-white shadow-[0_6px_16px_rgba(232,139,134,0.35)] lg:inline-flex"
                 >
-                    ✈ いつか行きたいを叶える
+                    <PlaneIcon className="h-4 w-4" /> いつか行きたいを叶える
                 </Link>
 
                 {/* モバイル：メニューボタン */}
@@ -114,7 +115,7 @@ export default function Header() {
                         onClick={() => setMobileMenuOpen(false)}
                         className="mt-6 flex items-center justify-center gap-2 rounded-full bg-[#e88b86] px-5 py-4 text-[15px] font-medium text-white shadow-[0_6px_16px_rgba(232,139,134,0.35)]"
                     >
-                        ✈ いつか行きたいを叶える
+                        <PlaneIcon className="h-4 w-4" /> いつか行きたいを叶える
                     </Link>
                 </div>
             )}

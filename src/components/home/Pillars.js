@@ -1,3 +1,5 @@
+import PlaneIcon from "@/components/home/PlaneIcon";
+
 const pillars = [
     {
         bg: "#e89b96",
@@ -45,7 +47,7 @@ export default function Pillars() {
     return (
         <section id="pillars" className="reveal mx-auto mt-20 max-w-[1120px] scroll-mt-24 px-6 sm:px-10 lg:mt-[100px]">
             <h2 className="font-maru flex items-center justify-center gap-3.5 text-center text-[26px] font-bold text-[#4a4644] sm:text-[30px]">
-                <span className="text-[#e79b96]">➻</span>はるふートラベルで発信していること<span className="text-[#e79b96]">✈</span>
+                <span className="text-[#e79b96]">➻</span>はるふートラベルで発信していること<PlaneIcon className="inline-block h-6 w-6 text-[#e79b96]" />
             </h2>
             <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
                 {pillars.map((p) => (

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { urlFor } from "@/sanity/client";
 import { ArrowRight } from "lucide-react";
+import PlaneIcon from "@/components/home/PlaneIcon";
 
 // カードの色みは3パターン。カテゴリ名で決め、決まらなければ順番に割り当てる
 const SCHEMES = {
@@ -57,8 +58,8 @@ export default function PopularArticles({ posts = [] }) {
                                         />
                                     </div>
                                 ) : (
-                                    <div className="flex h-40 w-40 items-center justify-center rounded-full bg-[#fdf3f1] text-4xl">
-                                        ✈
+                                    <div className="flex h-40 w-40 items-center justify-center rounded-full bg-[#fdf3f1]">
+                                        <PlaneIcon className="h-14 w-14 text-[#e79b96]" />
                                     </div>
                                 )}
                                 <span
@@ -90,7 +91,7 @@ export default function PopularArticles({ posts = [] }) {
                     href="/blog"
                     className="hbtn inline-flex items-center gap-2.5 rounded-full bg-[#e88b86] px-8 py-4 text-[15px] font-medium text-white shadow-[0_8px_20px_rgba(232,139,134,0.35)]"
                 >
-                    ✈ ブログをもっと見る
+                    <PlaneIcon className="h-4 w-4" /> ブログをもっと見る
                     <ArrowRight className="h-4 w-4" />
                 </Link>
             </div>

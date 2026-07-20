@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PlaneIcon from "@/components/home/PlaneIcon";
 
 export default function Hero() {
     return (
@@ -38,7 +39,7 @@ export default function Hero() {
                         href="/blog"
                         className="hbtn inline-flex items-center gap-2.5 rounded-full bg-[#e88b86] px-7 py-4 text-[15px] font-medium text-white shadow-[0_8px_20px_rgba(232,139,134,0.35)]"
                     >
-                        ✈ ブログを読む
+                        <PlaneIcon className="h-4 w-4" /> ブログを読む
                     </Link>
                     <Link
                         href="/#about"

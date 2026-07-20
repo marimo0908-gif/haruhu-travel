@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PlaneIcon from "@/components/home/PlaneIcon";
 
 const strengths = [
     {
@@ -55,7 +56,7 @@ export default function AboutStrengths() {
         <section id="about" className="reveal mx-auto mt-[70px] grid max-w-[1120px] scroll-mt-24 grid-cols-1 gap-8 px-6 sm:px-10 lg:grid-cols-2">
             {/* ABOUT ME カード */}
             <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-[20px] bg-[#fdf3f1] p-10 text-center">
-                <span className="absolute right-6 top-5 text-[22px] text-[#e79b96] opacity-50">✈</span>
+                <PlaneIcon className="absolute right-6 top-5 h-[22px] w-[22px] text-[#e79b96] opacity-50" />
                 <span className="absolute bottom-4 left-5 text-[15px] text-[#e5b54e] opacity-40">✦</span>
                 <div>
                     <div className="mx-auto mb-4 flex h-[82px] w-[82px] items-center justify-center rounded-full bg-white shadow-[0_8px_20px_rgba(220,150,145,0.28)]">
