@@ -85,12 +85,15 @@ export default function AffiliateLink({
                 </div>
             )}
 
-            {campaignImage && (
-                <div className="border-t border-primary/10 w-full overflow-hidden bg-slate-50 flex justify-center">
+            {(campaignImage || title === 'ファンくる') && (
+                <div className="border-t border-primary/10 w-full overflow-hidden bg-slate-50 flex justify-center py-4 px-6">
                     <img 
-                        src={typeof campaignImage === 'string' ? campaignImage : campaignImage.url} 
+                        src={title === 'ファンくる' 
+                            ? '/images/fancrew-campaign-trimmed.png' 
+                            : (typeof campaignImage === 'string' ? campaignImage : campaignImage.url)
+                        } 
                         alt={title} 
-                        className="max-w-full h-auto"
+                        className={title === 'ファンくる' ? "max-h-20 w-auto object-contain" : "max-w-full h-auto"}
                     />
                 </div>
             )}

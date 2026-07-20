@@ -4,6 +4,7 @@ import Sidebar from "@/components/blog/Sidebar";
 import { client } from "@/sanity/client";
 import { POSTS_QUERY, CATEGORIES_QUERY } from "@/sanity/lib/queries";
 
+export const revalidate = 60;
 export const runtime = 'edge';
 
 
@@ -20,10 +21,33 @@ export default async function BlogPage({ searchParams }) {
         console.error("Sanity fetch error:", error);
     }
 
+    // Map category titles (Only "宿泊レビュー" remains "宿泊レビュー", everything else becomes "自由なライフスタイル")
+    const mapCategoryTitle = (title) => title === "宿泊レビュー" ? "宿泊レビュー" : "自由なライフスタイル";
+
+    const seen = new Set();
+    const mappedCategories = categories
+        .map(cat => ({
+            ...cat,
+            title: mapCategoryTitle(cat.title)
+        }))
+        .filter(cat => {
+            if (seen.has(cat.title)) return false;
+            seen.add(cat.title);
+            return true;
+        });
+
+    const mappedPosts = posts.map(post => ({
+        ...post,
+        category: post.category ? {
+            ...post.category,
+            title: mapCategoryTitle(post.category.title)
+        } : { title: "自由なライフスタイル" }
+    }));
+
     // Filter posts based on the category if provided
     const filteredPosts = selectedCategory 
-        ? posts.filter(post => post.category?.title === selectedCategory)
-        : posts;
+        ? mappedPosts.filter(post => post.category?.title === selectedCategory)
+        : mappedPosts;
 
     return (
         <div className="bg-slate-50 py-12 sm:py-20">
@@ -41,8 +65,17 @@ export default async function BlogPage({ searchParams }) {
                     {/* Main Content Area */}
                     <div className="flex-1">
                         <div className="mb-12">
-                            <h2 className="font-maru text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl mb-4 border-l-4 border-primary pl-4">
-                                {selectedCategory ? `${selectedCategory}の記事一覧` : "記事一覧"}
+                            <h2 className="font-maru text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl mb-4 border-l-4 border-primary pl-4 flex flex-wrap items-center">
+                                {selectedCategory ? (
+                                    <>
+                                        <span className="bg-gradient-to-r from-[#e88b86] to-[#e5c98a] bg-clip-text text-transparent mr-1">
+                                            {selectedCategory}
+                                        </span>
+                                        <span>の記事一覧</span>
+                                    </>
+                                ) : (
+                                    "記事一覧"
+                                )}
                             </h2>
                             <p className="text-lg text-slate-600">
                                 {selectedCategory 
@@ -64,7 +97,7 @@ export default async function BlogPage({ searchParams }) {
 
                     {/* Sidebar Area */}
                     <div className="lg:w-80 shrink-0">
-                        <Sidebar categories={categories} posts={posts} />
+                        <Sidebar categories={mappedCategories} posts={mappedPosts} />
                     </div>
                 </div>
             </div>

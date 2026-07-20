@@ -1,24 +1,19 @@
-import { Inter, Noto_Sans_JP, Outfit, Zen_Maru_Gothic, Zen_Kaku_Gothic_New, Caveat, Parisienne } from "next/font/google";
+import { Inter, Zen_Kaku_Gothic_New, Quicksand, Zen_Maru_Gothic, Caveat, Parisienne } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
-const noto = Noto_Sans_JP({ subsets: ["latin"], weight: ["400", "500", "700"] });
-const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
+const zenKaku = Zen_Kaku_Gothic_New({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const quicksand = Quicksand({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const zenMaru = Zen_Maru_Gothic({
   subsets: ["latin"],
   weight: ["500", "700", "900"],
   variable: "--font-zen-maru",
 });
-const zenKaku = Zen_Kaku_Gothic_New({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-zen-kaku",
-});
 const caveat = Caveat({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-caveat",
 });
 const parisienne = Parisienne({
@@ -42,7 +37,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja">
-      <body className={`${noto.className} ${outfit.className} ${zenMaru.variable} ${zenKaku.variable} ${caveat.variable} ${parisienne.variable} bg-background text-foreground antialiased`}>
+      <body className={`${zenKaku.className} ${quicksand.className} ${zenMaru.variable} ${caveat.variable} ${parisienne.variable} bg-background text-foreground antialiased`}>
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">

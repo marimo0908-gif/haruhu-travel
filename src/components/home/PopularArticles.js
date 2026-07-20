@@ -31,7 +31,15 @@ export default function PopularArticles({ posts = [] }) {
                     const slug = post.slug?.current || post.slug;
                     const categoryName = post.category?.title || post.category || "記事";
                     const scheme = schemeFor(categoryName, i);
-                    const imageSrc = post.mainImage ? urlFor(post.mainImage).width(700).url() : null;
+                    const imageSrc = slug === 'travel-money-comparison-wise-revolut-idare'
+                        ? '/travel-money-comparison-hero-new.png'
+                        : (post.mainImage ? urlFor(post.mainImage).width(700).url() : null);
+
+                    const blobStyles = [
+                        { borderRadius: "14% 46% 20% 52% / 40% 16% 54% 24%" },
+                        { borderRadius: "52% 16% 50% 18% / 18% 54% 20% 48%" },
+                        { borderRadius: "24% 50% 16% 46% / 50% 20% 46% 16%" },
+                    ];
 
                     return (
                         <Link
@@ -39,20 +47,22 @@ export default function PopularArticles({ posts = [] }) {
                             href={`/blog/${slug}`}
                             className="hcard flex flex-col overflow-hidden rounded-[18px] bg-white shadow-[0_12px_30px_rgba(150,130,130,0.12)]"
                         >
-                            <div className="relative h-[202px] px-3 pt-3">
+                            <div className="relative flex justify-center pt-6">
                                 {imageSrc ? (
-                                    <img
-                                        src={imageSrc}
-                                        alt={post.title}
-                                        className="block h-full w-full rounded-xl object-cover"
-                                    />
+                                    <div className="h-40 w-40 overflow-hidden rounded-full shadow-sm">
+                                        <img
+                                            src={imageSrc}
+                                            alt={post.title}
+                                            className="block h-full w-full object-cover"
+                                        />
+                                    </div>
                                 ) : (
-                                    <div className="flex h-full w-full items-center justify-center rounded-xl bg-[#fdf3f1] text-4xl">
+                                    <div className="flex h-40 w-40 items-center justify-center rounded-full bg-[#fdf3f1] text-4xl">
                                         ✈
                                     </div>
                                 )}
                                 <span
-                                    className="absolute left-6 top-6 rounded-full px-3.5 py-1.5 text-[11.5px] font-medium text-white"
+                                    className="absolute left-[calc(50%+30px)] top-4 rounded-full px-3 py-1.5 text-[11px] font-medium text-white shadow-sm"
                                     style={{ background: scheme.badge }}
                                 >
                                     {categoryName}

@@ -9,6 +9,7 @@ import PRBadge from "@/components/monetization/PRBadge";
 import ViewCounter from "@/components/blog/ViewCounter";
 import Sidebar from "@/components/blog/Sidebar";
 
+export const revalidate = 60;
 export const runtime = 'edge';
 
 
@@ -64,15 +65,39 @@ export default async function BlogPostPage({ params }) {
         console.error("Sanity fetch error:", error);
     }
 
+    const mapCategoryTitle = (title) => title === "宿泊レビュー" ? "宿泊レビュー" : "自由なライフスタイル";
+
+    const seen = new Set();
+    const mappedCategories = categories
+        .map(cat => ({
+            ...cat,
+            title: mapCategoryTitle(cat.title)
+        }))
+        .filter(cat => {
+            if (seen.has(cat.title)) return false;
+            seen.add(cat.title);
+            return true;
+        });
+
+    const mappedPosts = posts.map(p => ({
+        ...p,
+        category: p.category ? {
+            ...p.category,
+            title: mapCategoryTitle(p.category.title)
+        } : { title: "自由なライフスタイル" }
+    }));
+
     if (!post) {
         notFound();
     }
 
     const title = post.title;
-    const category = post.category?.title || post.category;
+    const category = mapCategoryTitle(post.category?.title || post.category);
     const rawDate = post.publishedAt || post.date;
     const date = rawDate ? new Date(rawDate).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-') : '';
-    const imageSrc = post.mainImage ? urlFor(post.mainImage).url() : post.imageUrl;
+    const imageSrc = slug === 'travel-money-comparison-wise-revolut-idare'
+        ? '/travel-money-comparison-hero-new.png'
+        : (post.mainImage ? urlFor(post.mainImage).url() : post.imageUrl);
 
     return (
         <article className="min-h-screen bg-slate-50/50 pb-24">
@@ -160,7 +185,7 @@ export default async function BlogPostPage({ params }) {
 
                     {/* Sidebar */}
                     <div className="lg:w-80 shrink-0">
-                        <Sidebar categories={categories} posts={posts} />
+                        <Sidebar categories={mappedCategories} posts={mappedPosts} />
                     </div>
                 </div>
             </div>

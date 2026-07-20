@@ -27,7 +27,7 @@ export default async function Home() {
   return (
     <div
       className="relative overflow-x-hidden pb-8"
-      style={{ background: "#fffdfb", fontFamily: "var(--font-zen-kaku), 'Noto Sans JP', sans-serif", color: "#55514f" }}
+      style={{ background: "#fffdfb", color: "#55514f" }}
     >
       <WaveBackground />
       <RevealInit />

@@ -41,7 +41,7 @@ export default function Hero() {
                         ✈ ブログを読む
                     </Link>
                     <Link
-                        href="/start"
+                        href="/#about"
                         className="hbtn inline-flex items-center gap-2.5 rounded-full border-[1.5px] border-[#f0d9d6] bg-white px-7 py-4 text-[15px] font-medium text-[#6a6462]"
                     >
                         ♡ 自己紹介はこちら

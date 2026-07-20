@@ -54,10 +54,7 @@ export default function AboutStrengths() {
     return (
         <section id="about" className="reveal mx-auto mt-[70px] grid max-w-[1120px] scroll-mt-24 grid-cols-1 gap-8 px-6 sm:px-10 lg:grid-cols-2">
             {/* ABOUT ME カード */}
-            <div
-                className="relative flex flex-col items-center justify-center overflow-hidden rounded-[20px] p-10 text-center"
-                style={{ background: "linear-gradient(160deg,#fdf3f1 0%,#fbe8e4 100%)" }}
-            >
+            <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-[20px] bg-[#fdf3f1] p-10 text-center">
                 <span className="absolute right-6 top-5 text-[22px] text-[#e79b96] opacity-50">✈</span>
                 <span className="absolute bottom-4 left-5 text-[15px] text-[#e5b54e] opacity-40">✦</span>
                 <div>
@@ -67,16 +64,10 @@ export default function AboutStrengths() {
                         </svg>
                     </div>
                     <div className="mb-2 text-[11px] font-bold tracking-[3px] text-[#e79b96]">ABOUT ME</div>
-                    <h3 className="font-maru mb-4 text-[22px] font-bold text-[#4a4644]">Haruhuってどんな人？</h3>
-                    <p className="mx-auto mb-6 max-w-[380px] text-[13.5px] leading-[1.9] text-[#7a7472]">
+                    <h3 className="font-maru mb-5 text-[22px] font-bold text-[#4a4644] inline-block bg-[#e5e7eb] px-5 py-2 rounded-xl">Haruhuってどんな人？</h3>
+                    <p className="mx-auto max-w-[380px] text-[13.5px] leading-[1.9] text-[#7a7472]">
                         会社員として働きながら、子どもと旅を楽しむ家族旅ブロガー。マイルとAIに出会い、「いつか行きたい」を「行けた」に変える挑戦を続けています。
                     </p>
-                    <Link
-                        href="/start"
-                        className="hbtn inline-flex items-center gap-2 rounded-full bg-[#e88b86] px-[26px] py-3 text-[13.5px] font-medium text-white shadow-[0_8px_18px_rgba(232,139,134,0.32)]"
-                    >
-                        もっと詳しく見る →
-                    </Link>
                 </div>
             </div>
 

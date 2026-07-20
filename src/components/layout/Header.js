@@ -6,10 +6,8 @@ import { Menu, X } from "lucide-react";
 
 const navigation = [
     { name: "About", href: "/#about" },
-    { name: "マイル / 旅行", href: "/#pillars" },
-    { name: "AI活用", href: "/#pillars" },
-    { name: "自由なライフスタイル", href: "/#pillars" },
-    { name: "ブログ", href: "/blog" },
+    { name: "マイル / 自由なライフスタイル", href: `/blog?category=${encodeURIComponent("自由なライフスタイル")}` },
+    { name: "AI活用", href: `/blog?category=${encodeURIComponent("AI活用")}` },
     { name: "SNS", href: "/#platforms" },
 ];
 
@@ -21,21 +19,19 @@ export default function Header() {
             <div className="w-full border-b border-[#f2e6e3] bg-[#fffdfb]/85 backdrop-blur-md">
             <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-5 py-3.5 sm:px-10">
                 {/* ロゴ */}
-                <Link href="/" className="flex items-center gap-3">
-                    <img
-                        src="/はるふーtravel.png"
-                        alt="はるふートラベル"
-                        className="h-12 w-auto sm:h-[56px]"
-                        style={{ mixBlendMode: "multiply" }}
-                    />
-                    <span className="leading-tight">
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-white border border-[#f2e6e3] shadow-sm flex items-center justify-center p-1 transition-all duration-300 group-hover:rotate-3 group-hover:scale-105">
+                        <img
+                            src="/はるふーtravel.png"
+                            alt="はるふートラベル"
+                            className="h-full w-full object-contain"
+                        />
+                    </div>
+                    <span className="leading-tight flex flex-col justify-center">
                         <span className="font-maru block text-lg font-bold tracking-wide text-[#4a4644] sm:text-2xl">
                             はるふートラベル
                         </span>
-                        <span
-                            className="-mt-0.5 block text-base font-bold tracking-wide text-[#e79b96]"
-                            style={{ fontFamily: "var(--font-caveat), cursive" }}
-                        >
+                        <span className="font-caveat block text-lg font-bold tracking-wide text-[#e79b96] -mt-0.5 sm:text-xl">
                             Haruhu Travel
                         </span>
                     </span>
@@ -74,9 +70,22 @@ export default function Header() {
             {mobileMenuOpen && (
                 <div className="fixed inset-0 z-50 bg-[#fffdfb] p-5 lg:hidden">
                     <div className="mb-10 flex items-center justify-between">
-                        <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileMenuOpen(false)}>
-                            <img src="/はるふーtravel.png" alt="" className="h-11 w-auto" style={{ mixBlendMode: "multiply" }} />
-                            <span className="font-maru text-lg font-bold text-[#4a4644]">はるふートラベル</span>
+                        <Link href="/" className="flex items-center gap-2.5 group" onClick={() => setMobileMenuOpen(false)}>
+                            <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-white border border-[#f2e6e3] shadow-sm flex items-center justify-center p-0.5">
+                                <img 
+                                    src="/はるふーtravel.png" 
+                                    alt="" 
+                                    className="h-full w-full object-contain" 
+                                />
+                            </div>
+                            <span className="leading-tight flex flex-col justify-center">
+                                <span className="font-maru block text-base font-bold text-[#4a4644]">
+                                    はるふートラベル
+                                </span>
+                                <span className="font-caveat block text-sm font-bold text-[#e79b96] -mt-0.5">
+                                    Haruhu Travel
+                                </span>
+                            </span>
                         </Link>
                         <button
                             type="button"

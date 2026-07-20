@@ -26,8 +26,9 @@ module.exports = {
         card: "#ffffff",
       },
       fontFamily: {
-        sans: ['"Noto Sans JP"', '"Outfit"', 'sans-serif'],
+        sans: ['"Zen Kaku Gothic New"', '"Quicksand"', 'sans-serif'],
         maru: ['var(--font-zen-maru)', '"Noto Sans JP"', 'sans-serif'],
+        caveat: ['var(--font-caveat)', 'cursive'],
       },
       borderRadius: {
         'xl': '1rem',

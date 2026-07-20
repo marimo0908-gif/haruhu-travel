@@ -13,7 +13,9 @@ export default function PostCard({ post }) {
     const categoryName = post.category?.title || post.category;
 
     // Handle images: Sanity image object or local string URL
-    const imageSrc = post.mainImage ? urlFor(post.mainImage).url() : post.imageUrl;
+    const imageSrc = slug === 'travel-money-comparison-wise-revolut-idare'
+        ? '/travel-money-comparison-hero-new.png'
+        : (post.mainImage ? urlFor(post.mainImage).url() : post.imageUrl);
 
     return (
         <Link href={`/blog/${slug}`} className="block h-full">

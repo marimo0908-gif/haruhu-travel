@@ -10,8 +10,8 @@ export default function EnglishQuizBanner() {
 
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8">
                 <div className="flex-1 text-center sm:text-left">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center justify-center sm:justify-start gap-2">
-                        <span className="text-3xl">✈️</span>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center justify-center sm:justify-start gap-2.5">
+                        <Plane className="w-7 h-7 text-primary transform rotate-45 shrink-0" />
                         旅行英語クイズに挑戦！
                     </h3>
                     <p className="text-slate-600 leading-relaxed max-w-xl">

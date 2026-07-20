@@ -3,6 +3,27 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer className="bg-[#fffdfb] px-5 pb-14 pt-16 text-center">
+            {/* フッター用ブログロゴマーク */}
+            <div className="flex flex-col items-center justify-center mb-10">
+                <Link href="/" className="flex flex-col items-center gap-2 group">
+                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-white border border-[#f2e6e3] shadow-sm flex items-center justify-center p-1 transition-all duration-300 group-hover:rotate-3 group-hover:scale-105">
+                        <img
+                            src="/はるふーtravel.png"
+                            alt="はるふートラベル"
+                            className="h-full w-full object-contain"
+                        />
+                    </div>
+                    <div className="text-center leading-none mt-1">
+                        <div className="font-maru text-lg font-bold tracking-wider text-[#4a4644]">
+                            はるふートラベル
+                        </div>
+                        <div className="font-caveat text-lg font-bold tracking-wide text-[#e79b96] mt-0.5">
+                            Haruhu Travel
+                        </div>
+                    </div>
+                </Link>
+            </div>
+
             <div
                 className="text-[26px] leading-[1.2] text-[#cabfbb] sm:text-[30px]"
                 style={{ fontFamily: "var(--font-parisienne), cursive" }}
