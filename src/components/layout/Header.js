@@ -22,7 +22,7 @@ export default function Header() {
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-white border border-[#f2e6e3] shadow-sm flex items-center justify-center p-1 transition-all duration-300 group-hover:rotate-3 group-hover:scale-105">
                         <img
-                            src="/はるふーtravel.png"
+                            src="/haruhu-travel-logo.png"
                             alt="はるふートラベル"
                             className="h-full w-full object-contain"
                         />
@@ -73,7 +73,7 @@ export default function Header() {
                         <Link href="/" className="flex items-center gap-2.5 group" onClick={() => setMobileMenuOpen(false)}>
                             <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-white border border-[#f2e6e3] shadow-sm flex items-center justify-center p-0.5">
                                 <img 
-                                    src="/はるふーtravel.png" 
+                                    src="/haruhu-travel-logo.png" 
                                     alt="" 
                                     className="h-full w-full object-contain" 
                                 />

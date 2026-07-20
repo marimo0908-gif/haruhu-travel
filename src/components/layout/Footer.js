@@ -8,7 +8,7 @@ export default function Footer() {
                 <Link href="/" className="flex flex-col items-center gap-2 group">
                     <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-white border border-[#f2e6e3] shadow-sm flex items-center justify-center p-1 transition-all duration-300 group-hover:rotate-3 group-hover:scale-105">
                         <img
-                            src="/はるふーtravel.png"
+                            src="/haruhu-travel-logo.png"
                             alt="はるふートラベル"
                             className="h-full w-full object-contain"
                         />
