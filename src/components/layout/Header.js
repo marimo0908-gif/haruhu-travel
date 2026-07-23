@@ -27,7 +27,7 @@ function AcademyHeaderBar() {
 
     return (
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-6 px-5 py-3.5 sm:px-10">
-            <Link href="/ai-academy" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group">
                 <div className="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-white border border-[#f2e6e3] shadow-sm flex items-center justify-center p-1 transition-all duration-300 group-hover:rotate-3 group-hover:scale-105">
                     <img
                         src="/haruhu-travel-logo.png"
@@ -46,7 +46,7 @@ function AcademyHeaderBar() {
             </Link>
 
             <Link
-                href="/ai-academy"
+                href="/"
                 className="ml-auto inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-semibold text-muted transition-colors hover:bg-[#fbeeec] hover:text-accent"
             >
                 <Home size={17} /> ホーム
