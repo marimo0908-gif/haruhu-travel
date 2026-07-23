@@ -8,7 +8,7 @@ import PlaneIcon from "@/components/home/PlaneIcon";
 const navigation = [
     { name: "About", href: "/#about" },
     { name: "マイル / 自由なライフスタイル", href: `/blog?category=${encodeURIComponent("自由なライフスタイル")}` },
-    { name: "AI活用", href: `/blog?category=${encodeURIComponent("AI活用")}` },
+    { name: "AI活用", href: "/ai-academy" },
     { name: "SNS", href: "/#platforms" },
 ];
 
