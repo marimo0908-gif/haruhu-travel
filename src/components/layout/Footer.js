@@ -1,7 +1,97 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import PlaneIcon from "@/components/home/PlaneIcon";
 
+const academySocials = [
+    {
+        name: "Note",
+        href: "https://note.com/juicy_roses5378",
+        icon: (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg>
+        ),
+    },
+    {
+        name: "Substack",
+        href: "https://substack.com/@haruhu0",
+        icon: (
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 3H2v3h20V3zM2 9.5V21l10-5.6L22 21V9.5H2z" />
+            </svg>
+        ),
+    },
+    {
+        name: "Instagram",
+        href: "https://instagram.com/marimo_dog_",
+        icon: (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+        ),
+    },
+    {
+        name: "YouTube",
+        href: "https://youtube.com/@haruhu-26271",
+        icon: (
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 8a4 4 0 0 0-3-3.8C17 3.7 12 3.7 12 3.7s-5 0-7 .5A4 4 0 0 0 2 8v8a4 4 0 0 0 3 3.8c2 .5 7 .5 7 .5s5 0 7-.5A4 4 0 0 0 22 16z" />
+                <path d="m10 15 5-3-5-3z" fill="currentColor" />
+            </svg>
+        ),
+    },
+];
+
+function AcademyFooter() {
+    return (
+        <footer className="border-t border-[#f2e7e3] bg-[#fdf8f6] px-5 py-10 text-center">
+            <div className="mx-auto flex max-w-[1120px] flex-col items-center gap-6">
+                <div className="flex items-center gap-2">
+                    <span className="flex h-[34px] w-[34px] items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent">
+                        <PlaneIcon className="h-[17px] w-[17px] text-white" />
+                    </span>
+                    <span className="text-[16px] italic text-accent" style={{ fontFamily: "Georgia, serif" }}>
+                        haruhu travel
+                    </span>
+                </div>
+                <p className="max-w-[440px] text-[13px] leading-[1.8] text-muted">
+                    「いつか行きたい」を「行けた」に。
+                    <br />
+                    ママ × 子連れ旅行 × AI挑戦中のはるふーが発信しています。
+                </p>
+                <div className="flex gap-5">
+                    {academySocials.map((s) => (
+                        <a
+                            key={s.name}
+                            href={s.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex flex-col items-center gap-2 text-muted no-underline transition-colors hover:text-accent"
+                        >
+                            <span className="flex h-12 w-12 items-center justify-center rounded-2xl border-[1.5px] border-[#f2e0dc] bg-white transition-all">
+                                {s.icon}
+                            </span>
+                            <span className="text-[11px] font-semibold">{s.name}</span>
+                        </a>
+                    ))}
+                </div>
+                <span className="text-[11.5px] text-[#c0b4b0]">© 2026 はるふー travel ・ はるふーAI教室</span>
+            </div>
+        </footer>
+    );
+}
+
 export default function Footer() {
+    const pathname = usePathname();
+    if (pathname?.startsWith("/ai-academy")) {
+        return <AcademyFooter />;
+    }
+
     return (
         <footer className="bg-[#fffdfb] px-5 pb-14 pt-16 text-center">
             {/* フッター用ブログロゴマーク */}

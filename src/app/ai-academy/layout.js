@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function AcademyLayout({ children }) {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative">
       <div
-        className="pointer-events-none absolute left-0 right-0 top-0 z-0 h-[420px]"
+        className="pointer-events-none absolute -top-24 left-0 right-0 z-0 h-[480px]"
         style={{
           background:
             "linear-gradient(180deg,#fbeeea 0%,#fdf4f1 45%,#fdf7f4 75%,rgba(253,247,244,0) 100%)",

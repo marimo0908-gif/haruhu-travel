@@ -1,12 +1,9 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { lessons } from "./lessons-data";
-import ProgressGauge from "./components/ProgressGauge";
 import Celebration from "./components/Celebration";
-
-const STORAGE_KEY = "haruhu-ai-progress";
-const TOTAL = lessons.length;
+import { computePct, readProgress, writeProgress } from "./progressStore";
 
 const AcademyContext = createContext(null);
 
@@ -31,15 +28,12 @@ export default function AcademyProvider({ children }) {
   const [celebrating, setCelebrating] = useState(false);
   const [confetti, setConfetti] = useState([]);
 
+  const isFirstRun = useRef(true);
+  const prevCompletedRef = useRef({});
+  const userActionRef = useRef(false);
+
   useEffect(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (saved && typeof saved === "object") {
-        setCompleted({ ...saved });
-      }
-    } catch (e) {
-      /* localStorageが使えない環境ではそのまま未完了扱い */
-    }
+    setCompleted(readProgress());
   }, []);
 
   const celebrate = useCallback(() => {
@@ -51,28 +45,35 @@ export default function AcademyProvider({ children }) {
     }, 3600);
   }, []);
 
-  const toggleComplete = useCallback(
-    (id) => {
-      setCompleted((prev) => {
-        const wasAll = Object.values(prev).filter(Boolean).length === TOTAL;
-        const next = { ...prev, [id]: !prev[id] };
-        try {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-        } catch (e) {}
-        const nowAll = Object.values(next).filter(Boolean).length === TOTAL;
-        if (!wasAll && nowAll) celebrate();
-        return next;
-      });
-    },
-    [celebrate]
-  );
+  // localStorageへの保存とお祝い演出は、ユーザーの操作(toggleComplete)による
+  // 変化のときだけ行う。読み込み直後の反映では発火させない(リロードのたびに
+  // 紙吹雪が出てしまうのを防ぐため)。
+  useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      prevCompletedRef.current = completed;
+      return;
+    }
+    if (userActionRef.current) {
+      writeProgress(completed);
+      const wasAll = computePct(prevCompletedRef.current) === 100;
+      const nowAll = computePct(completed) === 100;
+      if (!wasAll && nowAll) celebrate();
+      userActionRef.current = false;
+    }
+    prevCompletedRef.current = completed;
+  }, [completed, celebrate]);
+
+  const toggleComplete = useCallback((id) => {
+    userActionRef.current = true;
+    setCompleted((prev) => ({ ...prev, [id]: !prev[id] }));
+  }, []);
 
   const doneCount = Object.values(completed).filter(Boolean).length;
-  const pct = Math.round((doneCount / TOTAL) * 100);
+  const pct = computePct(completed);
 
   return (
-    <AcademyContext.Provider value={{ completed, doneCount, total: TOTAL, pct, toggleComplete }}>
-      <ProgressGauge pct={pct} celebrating={celebrating} />
+    <AcademyContext.Provider value={{ completed, doneCount, total: lessons.length, pct, toggleComplete }}>
       {children}
       {celebrating && <Celebration confetti={confetti} />}
     </AcademyContext.Provider>

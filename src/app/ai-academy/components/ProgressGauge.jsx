@@ -2,7 +2,7 @@
 
 export default function ProgressGauge({ pct, celebrating }) {
   return (
-    <div className="mx-auto flex max-w-[1120px] items-center gap-3 px-5 pb-2 pt-5 sm:px-8">
+    <div className="flex w-full items-center gap-3">
       <span className="whitespace-nowrap text-[12px] font-semibold text-muted">✈ 学びの旅</span>
       <div className="relative h-6 flex-1">
         <div
